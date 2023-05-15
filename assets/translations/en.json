@@ -1,0 +1,14 @@
+{
+  "login": "Log In",
+  "password": "Password",
+  "emailOrPhone": "Email/Phone",
+  "dontHaveAnAccount": "Don’t have an account?",
+  "resetPassword": "Reset Password",
+  "signUp": "Sign Up",
+  "loginwithsocialoffilltheFormToContinue": "Login with social or fill the form to continue.",
+  "letsGetStarted": "Let \\'s Get Started!",
+  "noInternetConnectivity": "No internet connectivity",
+  "thereisnointernetconnection": "There is no internet connection",
+  "reload": "Reload",
+  "required": "Required"
+}

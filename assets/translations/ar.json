@@ -1,0 +1,14 @@
+{
+  "login": "تسجيل الدخول",
+  "password": "كلمة المرور",
+  "emailOrPhone": "البريد الإلكتروني / رقم الهاتف",
+  "dontHaveAnAccount": "ليس لديك حساب؟",
+  "resetPassword": "إعادة تعيين كلمة المرور",
+  "signUp": "إشتراك",
+  "loginwithsocialoffilltheFormToContinue": "تسجيل الدخول مع وسائل التواصل الاجتماعي أو ملء النموذج للمتابعة.",
+  "letsGetStarted": "هيا بنا نبدأ!",
+  "noInternetConnectivity": "لا يوجد اتصال بالإنترنت",
+  "thereisnointernetconnection": "لا يوجد اتصال بالإنترنت",
+  "reload": "إعادة تحميل",
+  "required": "مطلوب"
+}
