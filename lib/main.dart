@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:e_commerce/core/utils/constants.dart';
 import 'package:e_commerce/features/cart/presentaion/view_model/counter_cubit/counter_cubit.dart';
@@ -83,9 +82,6 @@ class _ECommerceState extends State<ECommerce> {
           ),
           BlocProvider(
             create: (context) => AppBarDrawerCubit(),
-          ),
-          BlocProvider(
-            create: (context) => BottomBarCubit(),
           ),
         ],
         child: MaterialApp(

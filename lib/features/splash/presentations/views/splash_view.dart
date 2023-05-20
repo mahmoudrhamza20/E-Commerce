@@ -9,6 +9,11 @@ import 'package:e_commerce/features/splash/presentations/views/widgets/wave_prog
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/utils/cache_helper.dart';
+import '../../../../core/utils/magic_router.dart';
+import '../../../home/presentation/views/home_view.dart';
+import '../../../main_screen/presentation/views/main_view.dart';
+
 
 
 class SplashView extends StatelessWidget {
@@ -48,6 +53,18 @@ class _SplashViewBodyState extends State<SplashViewBody>
   late Animation _waveWidthTween;
   late Animation _waveHeightTween;
   late Animation _textSizeTween;
+  Timer? _timer;
+  _startDelay() {
+    _timer = Timer(const Duration(seconds: 3), _goNext);
+  }
+
+  _goNext() {
+    if (CacheHelper.getData(key: 'login') == true) {
+      MagicRouter.navigateAndPopAll(const MainScreen());
+    } else {
+      MagicRouter.navigateAndPopAll(const OnBoardingView());
+    }
+  }
 
   @override
   void initState() {
@@ -96,12 +113,19 @@ class _SplashViewBodyState extends State<SplashViewBody>
     _textSizeTween = HWAnimationConfig.textSizeTweenSequence
         .animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
     _controller.forward();
+Timer(const Duration(seconds: 5),(){
+  if (CacheHelper.getData(key: 'login') == true) {
+      MagicRouter.navigateAndPopAll(const MainScreen());
+    } else {
+      MagicRouter.navigateAndPopAll(const OnBoardingView());
+    }
+}
+ );
+  
 
-     Timer(const Duration(seconds: 6), () =>Navigator.pushReplacement(
-    context,
-    MaterialPageRoute(builder: (context) => const OnBoardingView()),
-  ));
   }
+
+   
 
   @override
   Widget build(BuildContext context) {
@@ -184,5 +208,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
     super.dispose();
     _controller.stop();
     _controller.dispose();
+    _timer?.cancel();
   }
 }

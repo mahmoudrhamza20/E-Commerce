@@ -21,7 +21,7 @@ class HomeView extends StatelessWidget {
       menu: buildMenu(context),
      // type: Localizations.localeOf(context).languageCode == 'en'? SideMenuType.shrikNRotate:SideMenuType.shrikNRotate,
       type:  SideMenuType.shrikNRotate,
-      onChange: (_isOpened) => AppBarDrawerCubit.get(context).changeStatus(),
+      onChange: (isOpened) => AppBarDrawerCubit.get(context).changeStatus(),
       child: Scaffold(
           appBar: buildHomeAppBar(context: context,title: 'Delivery To',isHome: true),
           body:const HomeViewBody()

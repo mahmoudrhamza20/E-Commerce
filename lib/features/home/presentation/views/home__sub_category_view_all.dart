@@ -25,7 +25,7 @@ class HomeSubCategoryViewAll extends StatelessWidget {
                 itemCount: 15,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
-                  childAspectRatio: 2.2/ 1,
+                  childAspectRatio: 2.2/ 1.2,
                   crossAxisSpacing: 1,
                   mainAxisSpacing:1,
                 ),

@@ -41,16 +41,21 @@ dependencies:
   dio:
   smooth_page_indicator: ^1.0.0+2
   intl_phone_field: ^3.1.0
+  country_picker: ^2.0.20
   pinput: ^2.2.31
   font_awesome_flutter: ^10.4.0
   convex_bottom_bar: ^3.2.0
   flutter_credit_card: ^3.0.5
   awesome_dialog: ^3.0.2
   connectivity_plus: ^3.0.3
-  image_picker: ^0.8.7+1
   easy_localization: ^3.0.1
   url_launcher: ^6.1.10
   lottie: ^2.3.2
+  image_picker: ^0.8.7+5
+  dartz:
+  get_storage: ^2.1.1
+  firebase_core: ^2.9.0
+  firebase_auth: ^4.4.0
   flutter:
     sdk: flutter
 

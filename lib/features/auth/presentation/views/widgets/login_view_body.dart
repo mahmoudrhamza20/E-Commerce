@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../core/utils/cache_helper.dart';
 import '../../../../../core/utils/constants.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/magic_router.dart';
@@ -136,7 +137,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                           });
                         },
                         shape: const CircleBorder(),),
-                      const Flexible(child: Text('By Signing up, you agree to the Terms of service and Privacy Policy ',style: TextStyle(height: 1.3),)),
+                       Flexible(child: Text(LocaleKeys.bysigningupyouagreetotheermsofservice.tr(),style:const  TextStyle(height: 1.3),)),
                     ],
                   ),
                   SizedBox(height:MediaQuery.of(context).size.height*.17 ),
@@ -156,7 +157,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       backgroundColor: kPrimaryColor.withOpacity(.9),
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
-                          //CacheHelper.saveData(key: 'login', value: true);
+                          CacheHelper.saveData(key: 'login', value: true);
                          MagicRouter. navigateTo(const MainScreen());
                         }
                       }

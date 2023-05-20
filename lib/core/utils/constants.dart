@@ -127,7 +127,7 @@ Future<dynamic> buildShowModalBottomSheetOfProductDetail(BuildContext context,[i
               ),
               const SizedBox(height: 10,),
               CustomButton(
-                onPressed: ()=>MagicRouter.navigateTo(DetailsOfPayment()),
+                onPressed: ()=>MagicRouter.navigateTo(const DetailsOfPayment()),
                 text: 'Confirm Address',
                 textColor: Colors.white,
                 backgroundColor: kPrimaryColor,

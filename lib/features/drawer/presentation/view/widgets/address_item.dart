@@ -16,7 +16,6 @@ final bool isPay;
 }
 
 class _AddressItemState extends State<AddressItem> {
-  int selected = -1 ;
   bool selectedIndex = false ;
   @override
   Widget build(BuildContext context) {

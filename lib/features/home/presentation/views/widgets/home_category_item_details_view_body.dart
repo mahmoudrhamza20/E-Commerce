@@ -49,6 +49,7 @@ class HomeCategoryItemDetailsViewBody extends StatelessWidget {
             const MenuItemDetailsViewSection(title: 'Item Popular'),
            SizedBox(height: 10.h,),
             const MenuItemDetailsViewSection(title: 'New Item'),
+              SizedBox(height: 20.h,),
           ],
         ),
       ),

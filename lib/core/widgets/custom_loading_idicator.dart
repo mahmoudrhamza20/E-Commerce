@@ -1,11 +1,19 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lottie/lottie.dart';
+
 
 class CustomLoadingIndicator extends StatelessWidget {
-  const CustomLoadingIndicator({Key? key}) : super(key: key);
+  const CustomLoadingIndicator({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: CircularProgressIndicator());
+    return   Center(
+        child:SizedBox(
+          height: 250.h,
+          width: 250.w,
+          child: Lottie.asset('assets/json/progressIndicator.json'))
+        );
+
   }
 }

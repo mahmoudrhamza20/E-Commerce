@@ -1,7 +1,9 @@
 import 'package:e_commerce/core/utils/assets.dart';
+import 'package:e_commerce/core/utils/cache_helper.dart';
 import 'package:e_commerce/core/utils/constants.dart';
 import 'package:e_commerce/core/utils/magic_router.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
+import 'package:e_commerce/features/auth/presentation/views/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../features/drawer/presentation/view/about_us_view.dart';
@@ -19,24 +21,25 @@ Widget buildMenu(context) {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        UserAccountsDrawerHeader(
-            decoration:const BoxDecoration(color: kBackground,),
-            currentAccountPictureSize: const Size(80,80),
-            margin: EdgeInsets.zero,
-            currentAccountPicture: Container(
-              height: 80.w,
-              width: 80.w,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: kBackground,
-                image: DecorationImage(image: AssetImage(AssetsData.avtar),),),
-            ),
-            
-            accountName:  Padding(
-              padding: const EdgeInsets.only(top: 10),
+        Padding(
+         padding: EdgeInsets.symmetric(horizontal: 20.w),
+          child: Container(
+                height: 80.w,
+                width: 80.w,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: kBackground,
+                  image: DecorationImage(image: AssetImage(AssetsData.avtar),),),
+              ),
+        ),
+            Padding(
+              padding:  EdgeInsets.only(top: 10.h,left: 20.w),
               child: Text('Mahmoud',style: TextStyle(color: Colors.black,fontSize: 16.sp),),
             ),
-            accountEmail: const Text('mahmoud@gmail.com',style: TextStyle(color: Colors.black54))),
+             Padding(
+               padding: EdgeInsets.symmetric(horizontal: 20.w),
+               child: const Text('mahmoud@gmail.com',style: TextStyle(color: Colors.black54)),
+             ),
          ListTileOfDrawer(
           title: 'My Profile',
           leadingIcon: Icons.person_2_outlined,
@@ -71,9 +74,26 @@ Widget buildMenu(context) {
         Padding(
           padding:  EdgeInsets.symmetric(horizontal: 20.w),
           child: SizedBox(
-            width: MediaQuery.of(context).size.width*0.27,
+            width: MediaQuery.of(context).size.width*0.3,
             child:  CustomButton(
+              onPressed: (){
+                CacheHelper.clear();
+                MagicRouter.navigateAndPopAll(const LoginView());
+              },
                 text: 'Log Out',
+                textColor: Colors.white,
+                backgroundColor: kPrimaryColor,
+              borderRadius: BorderRadius.circular(18),
+            ),
+          ),
+        ),
+        SizedBox(height: 10.h,),
+        Padding(
+          padding:  EdgeInsets.symmetric(horizontal: 20.w),
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width*0.3,
+            child:  CustomButton(
+                text: 'Delete Account',
                 textColor: Colors.white,
                 backgroundColor: kPrimaryColor,
               borderRadius: BorderRadius.circular(18),

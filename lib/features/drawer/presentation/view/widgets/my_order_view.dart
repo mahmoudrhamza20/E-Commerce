@@ -80,9 +80,9 @@ final Color color;
                 children:  [
                     SizedBox(
                    width: 90.w,
-                   height: 30.h,
+                   height: 40.h,
                    child: CustomButton(
-                     text: 'Detail',
+                     text: 'Details',
                        textColor: Colors.white,
                        backgroundColor: kPrimaryColor,
                        onPressed: onPressed,

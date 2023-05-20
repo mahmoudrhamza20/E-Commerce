@@ -1,5 +1,8 @@
 import 'package:e_commerce/core/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../utils/constants.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField(
@@ -43,7 +46,9 @@ class CustomTextFormField extends StatelessWidget {
       keyboardType: inputType,
       obscureText: isPassword,
       cursorColor: kPrimaryColor,
+      
       decoration: InputDecoration(
+        suffixIconColor: kPrimaryColor,
         fillColor: Colors.white,
         filled: true,
         errorBorder:OutlineInputBorder(borderRadius: BorderRadius.circular(6),borderSide: BorderSide(color: Colors.grey.shade300)) ,
@@ -66,4 +71,53 @@ class CustomTextFormField extends StatelessWidget {
       enabled: isClickable,
     );
   }
+}
+
+Widget customTextField(
+    {
+      @required Icon? endIcon,
+      @required Widget? prefix,
+      @required String? hintText,
+      @required Color? color,
+      required bool isPassword,
+      required TextInputType type,
+      required TextEditingController controller,
+      VoidCallback? onPressed}) {
+  return TextField(
+      controller: controller,
+      style: TextStyle(color: Colors.black.withOpacity(.8)),
+      obscureText: isPassword,
+      keyboardType: type,
+      
+      cursorColor: kPrimaryColor,
+      decoration: InputDecoration(
+        isDense: true,
+        contentPadding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+        filled: true,
+        fillColor:  color??const Color(0xfff5f5f5),
+        prefixIconColor: kPrimaryColor,
+        prefixIcon: prefix,
+        suffixIcon: endIcon != null
+            ? IconButton(
+          color: const Color(0xff97ADB6),
+          splashRadius: 1,
+          onPressed: onPressed,
+          icon: endIcon,
+        )
+            : null,
+        border:const UnderlineInputBorder(borderSide:  BorderSide(
+          color: Colors.grey,
+            width:1,
+            style: BorderStyle.solid,
+          ),),
+        focusedBorder: const UnderlineInputBorder(borderSide:  BorderSide(
+        color: Colors.grey,
+
+            width:1,
+            style: BorderStyle.solid
+          ),),
+        hintMaxLines: 1,
+        hintText: hintText,
+        hintStyle: TextStyle(fontSize: 14.sp, color: const Color(0xffB5B5B5)),
+      ));
 }

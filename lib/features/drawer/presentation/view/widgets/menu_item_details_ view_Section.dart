@@ -21,7 +21,7 @@ class MenuItemDetailsViewSection extends StatelessWidget {
         ),
          SizedBox(height: 10.h,),
         SizedBox(
-          height: MediaQuery.of(context).size.height * .42,
+          height: MediaQuery.of(context).size.height * .35,
           child: ListView.builder(
             physics: const BouncingScrollPhysics(),
             itemCount: 3,

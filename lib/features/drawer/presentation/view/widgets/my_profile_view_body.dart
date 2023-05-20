@@ -1,20 +1,53 @@
+import 'dart:io';
+
+import 'package:e_commerce/core/utils/cache_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_picker/image_picker.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/constants.dart';
 import '../../../../../core/widgets/custom_button.dart';
 import '../../../../../core/widgets/custom_text_form.dart';
 
-class MyProfileViewBody extends StatelessWidget {
+class MyProfileViewBody extends StatefulWidget {
   MyProfileViewBody({
     super.key,
   });
 
+  @override
+  State<MyProfileViewBody> createState() => _MyProfileViewBodyState();
+}
+
+class _MyProfileViewBodyState extends State<MyProfileViewBody> {
   final TextEditingController nameController = TextEditingController();
+
   final TextEditingController emailController = TextEditingController();
+
   final TextEditingController phoneController = TextEditingController();
+
   final TextEditingController passwordController = TextEditingController();
+
   final GlobalKey<FormState> formKey = GlobalKey();
+
+File? image;
+
+Future pickImage() async {
+    try {
+      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+if(image == null) return;
+final imageTemp = File(image.path);
+setState(() => {
+  this.image = imageTemp,
+  //CacheHelper.saveData(key: 'photo', value: this.image)
+  }
+
+);
+    } on PlatformException catch(e) {
+      print('Failed to pick image: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -28,22 +61,28 @@ class MyProfileViewBody extends StatelessWidget {
             children: [
                SizedBox(height: 20.h,),
               Center(
-                child: Stack(
-                  alignment: Alignment.bottomRight,
-                  children: [
-                    Container(
-                      height: 100.w,
-                      width: 100.w,
-                      decoration:   const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: kBackground,
-                        image: DecorationImage(image: AssetImage(AssetsData.avtar),),),
-                    ),
-                     CircleAvatar(
-                        radius: 15.r,
-                        backgroundColor: kPrimaryColor,
-                        child:const Icon(Icons.mode_edit_outline_outlined,color: Colors.white,size: 20,)),
-                  ],
+                child: InkWell(
+                   onTap: ()=> {
+                        pickImage(),
+                        },
+                  child: Stack(
+                    alignment: Alignment.bottomRight,
+                    children: [
+                      Container(
+                        height: 100.w,
+                        width: 100.w,
+                        decoration:    BoxDecoration(
+                          shape: BoxShape.circle,
+
+                          color: kBackground,
+                          image:image==null?const DecorationImage(image: AssetImage(AssetsData.avtar),):DecorationImage(image: FileImage(image!,),fit: BoxFit.cover),),
+                      ),
+                       CircleAvatar(
+                          radius: 15.r,
+                          backgroundColor: kPrimaryColor,
+                          child:const Icon(Icons.mode_edit_outline_outlined,color: Colors.white,size: 20,)),
+                    ],
+                  ),
                 ),
               ),
                SizedBox(height: 8.h,),

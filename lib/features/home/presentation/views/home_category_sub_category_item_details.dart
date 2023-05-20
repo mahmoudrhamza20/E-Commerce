@@ -37,7 +37,7 @@ class HomeCategorySubCategoryItemDetailsBody extends StatelessWidget {
               itemCount: 6,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 1 / 1.6,
+                childAspectRatio: 1 / 1.7,
                 crossAxisSpacing: 1.0,
                 mainAxisSpacing: 1.0,
               ),
