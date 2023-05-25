@@ -1,6 +1,8 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:e_commerce/core/utils/cache_helper.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,9 +11,10 @@ import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/constants.dart';
 import '../../../../../core/widgets/custom_button.dart';
 import '../../../../../core/widgets/custom_text_form.dart';
+import '../../../../../translations/locale_keys.g.dart';
 
 class MyProfileViewBody extends StatefulWidget {
-  MyProfileViewBody({
+  const MyProfileViewBody({
     super.key,
   });
 
@@ -44,7 +47,7 @@ setState(() => {
 
 );
     } on PlatformException catch(e) {
-      print('Failed to pick image: $e');
+      log('Failed to pick image: $e');
     }
   }
 
@@ -86,7 +89,7 @@ setState(() => {
                 ),
               ),
                SizedBox(height: 8.h,),
-               Text('Full Name',style: TextStyle(color: Colors.black,fontSize: 14.sp),),
+               Text(LocaleKeys.fullName.tr(),style: TextStyle(color: Colors.black,fontSize: 14.sp),),
               SizedBox(height: 8.h,),
               CustomTextFormField(
                 isBorder: false,
@@ -103,7 +106,7 @@ setState(() => {
                 },
               ),
               SizedBox(height: 8.h,),
-               Text('Email Address',style: TextStyle(color: Colors.black,fontSize: 14.sp),),
+               Text(LocaleKeys.emailAddress.tr(),style: TextStyle(color: Colors.black,fontSize: 14.sp),),
               SizedBox(height: 8.h,),
               CustomTextFormField(
                 isPassword: true,
@@ -120,7 +123,7 @@ setState(() => {
                 },
               ),
              SizedBox(height: 8.h,),
-               Text('Phone Number',style: TextStyle(color: Colors.black,fontSize: 14.sp),),
+               Text(LocaleKeys.phoneNumber.tr(),style: TextStyle(color: Colors.black,fontSize: 14.sp),),
              SizedBox(height: 8.h,),
               CustomTextFormField(
                 isPassword: true,
@@ -137,7 +140,7 @@ setState(() => {
                 },
               ),
               SizedBox(height: 8.h,),
-                Text('Password',style: TextStyle(color: Colors.black,fontSize: 14.sp),),
+                Text(LocaleKeys.password.tr(),style: TextStyle(color: Colors.black,fontSize: 14.sp),),
               SizedBox(height: 8.h,),
               CustomTextFormField(
                 isPassword: true,
@@ -155,7 +158,7 @@ setState(() => {
               ),
               SizedBox(height: MediaQuery.of(context).size.height*.05,),
               CustomButton(
-                  text: 'Update',
+                  text: LocaleKeys.update.tr(),
                   textColor: Colors.white,
                   borderRadius: BorderRadius.circular(25),
                   backgroundColor: kPrimaryColor.withOpacity(.9),

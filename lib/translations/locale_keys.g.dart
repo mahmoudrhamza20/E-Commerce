@@ -36,5 +36,28 @@ abstract class  LocaleKeys {
   static const newPassword = 'newPassword';
   static const confirmPassword = 'confirmPassword';
   static const submit = 'submit';
+  static const myProfile = 'myProfile';
+  static const language = 'language';
+  static const allCategories = 'allCategories';
+  static const settings = 'settings';
+  static const aboutUs = 'aboutUs';
+  static const logOut = 'logOut';
+  static const deleteAccount = 'deleteAccount';
+  static const myOrder = 'myOrder';
+  static const fullName = 'fullName';
+  static const emailAddress = 'emailAddress';
+  static const phoneNumber = 'phoneNumber';
+  static const update = 'update';
+  static const english = 'english';
+  static const arabic = 'arabic';
+  static const menu = 'menu';
+  static const delivered = 'delivered';
+  static const processing = 'processing';
+  static const canceled = 'canceled';
+  static const details = 'details';
+  static const totalAmount = 'totalAmount';
+  static const orderId = 'orderId';
+  static const trackMyOrder = 'trackMyOrder';
+  static const deliveryAddress = 'deliveryAddress';
 
 }

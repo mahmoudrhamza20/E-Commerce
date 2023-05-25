@@ -4,6 +4,8 @@ import 'package:e_commerce/core/utils/constants.dart';
 import 'package:e_commerce/core/utils/magic_router.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/features/auth/presentation/views/login_view.dart';
+import 'package:e_commerce/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../features/drawer/presentation/view/about_us_view.dart';
@@ -33,7 +35,7 @@ Widget buildMenu(context) {
               ),
         ),
             Padding(
-              padding:  EdgeInsets.only(top: 10.h,left: 20.w),
+              padding:  EdgeInsets.only(top: 10.h,left: 20.w,right: 20.w),
               child: Text('Mahmoud',style: TextStyle(color: Colors.black,fontSize: 16.sp),),
             ),
              Padding(
@@ -41,32 +43,32 @@ Widget buildMenu(context) {
                child: const Text('mahmoud@gmail.com',style: TextStyle(color: Colors.black54)),
              ),
          ListTileOfDrawer(
-          title: 'My Profile',
+          title: LocaleKeys.myProfile.tr(),
           leadingIcon: Icons.person_2_outlined,
            onTap: ()=>MagicRouter. navigateTo(const MyProfileView()),
         ),
          ListTileOfDrawer(
-          title: 'Language',
+          title: LocaleKeys.language.tr(),
           leadingIcon: Icons.language_outlined,
           onTap: ()=>MagicRouter. navigateTo(const LanguageView()),
         ),
          ListTileOfDrawer(
-          title: 'All Categories',
+          title: LocaleKeys.allCategories.tr(),
           leadingIcon: Icons.category_outlined,
            onTap: ()=>MagicRouter. navigateTo(const AllCategoriesView()),
         ),
          ListTileOfDrawer(
-          title: 'My Order',
+          title: LocaleKeys.myOrder.tr(),
           leadingIcon: Icons.directions_bus,
           onTap: ()=>MagicRouter. navigateTo(const MyOrderView()),
         ),
          ListTileOfDrawer(
-          title: 'Settings',
+          title: LocaleKeys.settings.tr(),
           leadingIcon: Icons.settings_outlined,
           onTap: ()=>MagicRouter.navigateTo(const SettingView()),
         ),
          ListTileOfDrawer(
-          title: 'About Us',
+          title:LocaleKeys.aboutUs.tr(),
           leadingIcon: Icons.content_copy,
           onTap: ()=>MagicRouter. navigateTo(const AboutUsView()),
         ),
@@ -80,7 +82,7 @@ Widget buildMenu(context) {
                 CacheHelper.clear();
                 MagicRouter.navigateAndPopAll(const LoginView());
               },
-                text: 'Log Out',
+                text: LocaleKeys.logOut.tr(),
                 textColor: Colors.white,
                 backgroundColor: kPrimaryColor,
               borderRadius: BorderRadius.circular(18),
@@ -93,7 +95,7 @@ Widget buildMenu(context) {
           child: SizedBox(
             width: MediaQuery.of(context).size.width*0.3,
             child:  CustomButton(
-                text: 'Delete Account',
+                text: LocaleKeys.deleteAccount.tr(),
                 textColor: Colors.white,
                 backgroundColor: kPrimaryColor,
               borderRadius: BorderRadius.circular(18),

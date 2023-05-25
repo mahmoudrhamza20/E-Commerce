@@ -91,7 +91,7 @@ class _ECommerceState extends State<ECommerce> {
             supportedLocales: context.supportedLocales,
             locale: context.locale,
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(
+            theme: ThemeData( 
               fontFamily: kCairo,
                 scaffoldBackgroundColor: kBackground,
                 bottomNavigationBarTheme: BottomNavigationBarThemeData(

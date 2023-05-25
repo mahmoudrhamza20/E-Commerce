@@ -31,7 +31,7 @@ class CartViewBody extends StatelessWidget {const CartViewBody({Key? key,}) : su
           ),
         ),
          SizedBox(
-          height: 40.h,
+          height: 30.h,
         ),
         Padding(
           padding:  EdgeInsets.symmetric(horizontal: 20.w),
@@ -117,7 +117,7 @@ class CartViewBody extends StatelessWidget {const CartViewBody({Key? key,}) : su
   Future<dynamic> buildCartShowDialog(BuildContext context,) {
     return showDialog(
       context: context,
-      builder: (ctx) => BlocBuilder<CounterCubit, CounterState>(
+      builder: (context) => BlocBuilder<CounterCubit, CounterState>(
         builder: (context, state) {
           return AlertDialog(
             shape: const RoundedRectangleBorder(

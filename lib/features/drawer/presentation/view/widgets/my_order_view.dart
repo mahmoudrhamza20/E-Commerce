@@ -1,9 +1,10 @@
 import 'package:e_commerce/core/utils/constants.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/features/drawer/presentation/view/widgets/drawer_list_tile_app_bar.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import '../../../../../translations/locale_keys.g.dart';
 import 'my_order_view_body.dart';
 
 class MyOrderView extends StatelessWidget {
@@ -16,7 +17,7 @@ class MyOrderView extends StatelessWidget {
       initialIndex: 0,
       child: Scaffold(
         appBar: drawerListTileAppBar(
-          title: 'My Order',
+          title: LocaleKeys.myOrder.tr(),
           widget: tabBar(),
         ),
         body:const MyOrderViewBody() ,
@@ -32,10 +33,10 @@ Widget tabBar(){
     labelColor: Colors.black,
     unselectedLabelColor: Colors.grey,
     labelPadding: EdgeInsets.symmetric(horizontal: 10.w),
-    tabs: const[
-       Tab(text: 'Delivered',),
-       Tab(text: 'Processing',),
-       Tab(text: 'Canceled',),
+    tabs: [
+       Tab(text:  LocaleKeys.delivered.tr(),),
+       Tab(text:  LocaleKeys.processing.tr(),),
+       Tab(text:  LocaleKeys.canceled.tr(),),
     ],
   );
 }
@@ -61,7 +62,7 @@ final Color color;
             children: [
               Row(
                 children:  [
-                  Text('Order Id: 5t36-9iu2',style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.bold),),
+                  Text(' ${LocaleKeys.orderId.tr()} 5t36-9iu2',style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.bold),),
                 const  Spacer(),
                   Text('wed, 12 Sep',style: TextStyle(fontSize: 12.sp,color: Colors.grey),),
                 ],
@@ -71,7 +72,7 @@ final Color color;
                 children:  [
                   Text('03',style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.bold),),
                  const Spacer(),
-                  Text('Total Amount: ',style: TextStyle(fontSize: 14.sp,color: Colors.grey),),
+                  Text( LocaleKeys.totalAmount.tr(),style: TextStyle(fontSize: 14.sp,color: Colors.grey),),
                   Text('\$2,890',style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.bold),),
                 ],
               ),
@@ -82,7 +83,7 @@ final Color color;
                    width: 90.w,
                    height: 40.h,
                    child: CustomButton(
-                     text: 'Details',
+                     text:  LocaleKeys.details.tr(),
                        textColor: Colors.white,
                        backgroundColor: kPrimaryColor,
                        onPressed: onPressed,

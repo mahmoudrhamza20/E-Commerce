@@ -19,7 +19,6 @@ class HomeView extends StatelessWidget {
       key: sideMenuKey,
       background: kBackground,
       menu: buildMenu(context),
-     // type: Localizations.localeOf(context).languageCode == 'en'? SideMenuType.shrikNRotate:SideMenuType.shrikNRotate,
       type:  SideMenuType.shrikNRotate,
       onChange: (isOpened) => AppBarDrawerCubit.get(context).changeStatus(),
       child: Scaffold(

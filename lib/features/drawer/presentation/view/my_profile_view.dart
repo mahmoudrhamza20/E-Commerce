@@ -1,5 +1,7 @@
 import 'package:e_commerce/features/drawer/presentation/view/widgets/my_profile_view_body.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import '../../../../translations/locale_keys.g.dart';
 import 'widgets/drawer_list_tile_app_bar.dart';
 
 class MyProfileView extends StatelessWidget {
@@ -7,8 +9,8 @@ class MyProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: drawerListTileAppBar(title: 'My Profile'),
-      body:  MyProfileViewBody(),
+      appBar: drawerListTileAppBar(title: LocaleKeys.myProfile.tr(),),
+      body: const MyProfileViewBody(),
     );
   }
 }

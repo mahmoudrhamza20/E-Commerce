@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../../core/utils/cache_helper.dart';
+import '../../../../translations/locale_keys.g.dart';
 
 
 class LanguageView extends StatelessWidget {
@@ -13,17 +14,17 @@ class LanguageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: drawerListTileAppBar(title: 'Language'),
+      appBar: drawerListTileAppBar(title:LocaleKeys.language.tr(),),
       body: Padding(
         padding:  EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           children:   [
             SizedBox(height: 20.h,),
-            LanguageCard(title:'English',image: AssetsData.us_lang,onTap: (){ 
+            LanguageCard(title:LocaleKeys.english.tr(),image: AssetsData.us_lang,onTap: (){ 
                context.setLocale(const Locale('en'));
                  CacheHelper.saveData(key: 'lang', value: 'en');
             }),
-            LanguageCard(title:'Arabic',image: AssetsData.ar_lang,onTap: (){
+            LanguageCard(title:LocaleKeys.arabic.tr(),image: AssetsData.ar_lang,onTap: (){
               context.setLocale(const Locale('ar'));
                    CacheHelper.saveData(key: 'lang', value: 'ar');
             })

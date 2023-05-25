@@ -1,8 +1,10 @@
 import 'package:another_stepper/dto/stepper_data.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/utils/constants.dart';
+import '../../../../../translations/locale_keys.g.dart';
 import 'custom_stepper.dart';
 
 class TrackMyOrderViewBody extends StatelessWidget {
@@ -22,9 +24,9 @@ class TrackMyOrderViewBody extends StatelessWidget {
             const SizedBox(height: 6,),
             Row(
               children:  [
-                Text('Order Id: 5t36-9iu2',style: TextStyle(fontSize: 16.sp,color: Colors.grey),),
-                Spacer(),
-                Text('Amt: \$2,890.00',style: TextStyle(fontSize: 14.sp,color: Colors.black,fontWeight: FontWeight.bold),),
+                Text(' ${LocaleKeys.orderId.tr()} 5t36-9iu2',style: TextStyle(fontSize: 16.sp,color: Colors.grey),),
+               const Spacer(),
+                Text('${LocaleKeys.totalAmount.tr()} \$2,890.00',style: TextStyle(fontSize: 14.sp,color: Colors.black,fontWeight: FontWeight.bold),),
               ],
             ),
             const Divider(color: Colors.black54,),
@@ -50,7 +52,7 @@ class TrackMyOrderViewBody extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children:  [
-                             Text('Delivery Address',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.sp),),
+                             Text(LocaleKeys.deliveryAddress.tr(),style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.sp),),
                             const SizedBox(height: 5,),
                             Flexible(
                               child: Text('Home, Work & Other Address House No: 1234, 2nd Floor Sector 18, Silicon vally USA.',
