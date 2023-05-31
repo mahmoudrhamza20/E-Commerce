@@ -92,51 +92,62 @@ Future descriptionViewMore(BuildContext context) {
     },
   );
 }
-Future<dynamic> buildShowModalBottomSheetOfProductDetail(BuildContext context,[isDetails = false]) {
+Future<dynamic> buildShowModalBottomSheetOfProductDetail(BuildContext context, [isDetails = false]) {
   return showModalBottomSheet(
     context: context,
     builder: (context) {
-      return SizedBox(
-        child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 15.w),
-          child: Column(
-            children: [
-              Container(
-                width: double.infinity,
-                height: 50.h,
-                decoration:  BoxDecoration(
-                    color: Colors.grey.shade100
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children:  [
-                    const Text('Saved Address',style: TextStyle(fontWeight: FontWeight.bold),),
-                    InkWell(onTap:()=>isDetails?Navigator.pop (context): MagicRouter.navigateAndPopAll(AddAddressView()),
-                        child: const Text('Add New Address',style: TextStyle(fontWeight: FontWeight.bold,color: kPrimaryColor),)),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: 2,
-                  itemBuilder: (context, index) =>   Padding(
-                    padding: const EdgeInsets.only(bottom: 8),
-                    child: AddressItem(isPay: true,index: index, ),
+      int currentIndex = 0;
+      return StatefulBuilder(
+        builder: (BuildContext context, void Function(void Function()) setState) {  return
+         SizedBox(
+          child: Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 15.w),
+            child: Column(
+              children: [
+                Container(
+                  width: double.infinity,
+                  height: 50.h,
+                  decoration:  BoxDecoration(
+                      color: Colors.grey.shade100
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children:  [
+                      const Text('Saved Address',style: TextStyle(fontWeight: FontWeight.bold),),
+                      InkWell(onTap:()=>isDetails?Navigator.pop (context): MagicRouter.navigateAndPopAll(AddAddressView()),
+                          child: const Text('Add New Address',style: TextStyle(fontWeight: FontWeight.bold,color: kPrimaryColor),)),
+                    ],
                   ),
                 ),
-              ),
-              const SizedBox(height: 10,),
-              CustomButton(
-                onPressed: ()=>MagicRouter.navigateTo(const DetailsOfPayment()),
-                text: 'Confirm Address',
-                textColor: Colors.white,
-                backgroundColor: kPrimaryColor,
-                borderRadius: BorderRadius.circular(24.r),
-              ),
-               SizedBox(height: 10.h,),
-            ],
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: 2,
+                    itemBuilder: (context, index) =>   Padding(
+                      padding: const EdgeInsets.only(bottom: 8),
+                      child: InkWell(
+                        onTap: (){
+                          currentIndex = index;
+                         setState(() { },);
+                        },
+                        child: AddressItem(isPay: true,index: index, selectedIndex: currentIndex == index, )),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10,),
+                CustomButton(
+                  onPressed: ()=>MagicRouter.navigateTo(const DetailsOfPayment()),
+                  text: 'Confirm Address',
+                  textColor: Colors.white,
+                  backgroundColor: kPrimaryColor,
+                  borderRadius: BorderRadius.circular(24.r),
+                ),
+                 SizedBox(height: 10.h,),
+              ],
+            ),
           ),
-        ),
+          );
+
+          }
       );
     },
   );

@@ -4,8 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'address_item.dart';
 
-class AddressViewBody extends StatelessWidget {
+class AddressViewBody extends StatefulWidget {
   const AddressViewBody({Key? key}) : super(key: key);
+
+  @override
+  State<AddressViewBody> createState() => _AddressViewBodyState();
+}
+
+class _AddressViewBodyState extends State<AddressViewBody> {
+int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +32,12 @@ class AddressViewBody extends StatelessWidget {
                   itemCount: 3,
                   itemBuilder: (context, index) =>  Padding(
                     padding:  EdgeInsets.only(bottom: 8.h),
-                    child: AddressItem(index: index,),
+                    child: InkWell(
+                      onTap: (){
+                   currentIndex = index;
+                     setState(() {});
+                    },
+                      child: AddressItem(index: index,selectedIndex: currentIndex == index,)),
                   ),
                 ),
               ],

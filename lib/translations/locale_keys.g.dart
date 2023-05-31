@@ -16,7 +16,6 @@ abstract class  LocaleKeys {
   static const pleaseProvideAValidEmailAddress = 'pleaseProvideAValidEmailAddress';
   static const pleaseProvideAValidPasswordShouldGreaterThan8Character = 'pleaseProvideAValidPasswordShouldGreaterThan8Character';
   static const pleaseProvideAValidPhoneNumber = 'pleaseProvideAValidPhoneNumber';
-  static const PleaseEnterASimilarPassword = 'PleaseEnterASimilarPassword';
   static const loggingYouIn = 'loggingYouIn';
   static const bysigningupyouagreetotheermsofservice  = 'bysigningupyouagreetotheermsofservice ';
   static const name = 'name';
@@ -76,5 +75,10 @@ abstract class  LocaleKeys {
   static const pay = 'pay';
   static const addtoCart = 'addtoCart';
   static const welcome = 'welcome';
+  static const total = 'total';
+  static const continuetoPayment = 'continuetoPayment';
+  static const paymentDetails = 'paymentDetails';
+  static const change = 'change';
+  static const pleaseEnterASimilarPassword = 'pleaseEnterASimilarPassword';
 
 }

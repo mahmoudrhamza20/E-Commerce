@@ -48,7 +48,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     }
     if (passwordController.text != confirmPasswordController.text) {
       showSnackBar(
-        LocaleKeys.PleaseEnterASimilarPassword.tr(),
+        LocaleKeys.pleaseEnterASimilarPassword.tr(),
       );
       return;
     }

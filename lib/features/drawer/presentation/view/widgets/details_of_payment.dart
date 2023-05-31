@@ -1,10 +1,12 @@
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/features/drawer/presentation/view/widgets/drawer_list_tile_app_bar.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utils/constants.dart';
 import '../../../../../core/utils/magic_router.dart';
 import '../../../../../core/utils/styles.dart';
+import '../../../../../translations/locale_keys.g.dart';
 import '../../../../home/presentation/views/product_choose_payment_method_view.dart';
 
 class DetailsOfPayment extends StatelessWidget {
@@ -13,17 +15,14 @@ class DetailsOfPayment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: drawerListTileAppBar(title: 'Details'),
+      appBar: drawerListTileAppBar(title: LocaleKeys.details.tr(),),
       body: const DetailsOfPaymentBody(),
     );
   }
 }
 
 class DetailsOfPaymentBody extends StatelessWidget {
-  const DetailsOfPaymentBody({
-    super.key,
-  });
-
+  const DetailsOfPaymentBody({ super.key,});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -35,9 +34,9 @@ class DetailsOfPaymentBody extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children:  [
-              const Text('Delivery Address',style: TextStyle(fontWeight: FontWeight.bold),),
+               Text(LocaleKeys.deliveryAddress.tr(),style:const TextStyle(fontWeight: FontWeight.bold),),
               InkWell(onTap: ()=>buildShowModalBottomSheetOfProductDetail(context, true),
-                  child: const Text('Change',style: TextStyle(fontWeight: FontWeight.bold,color: kPrimaryColor),)),
+                  child:  Text(LocaleKeys.change.tr(),style:const TextStyle(fontWeight: FontWeight.bold,color: kPrimaryColor),)),
             ],
           ),
            SizedBox(height: 10.h,),
@@ -57,23 +56,21 @@ class DetailsOfPaymentBody extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children:  [
-                  const Text('Payment Details',style: TextStyle(fontWeight: FontWeight.bold),),
+                   Text(LocaleKeys.paymentDetails.tr(),style:const  TextStyle(fontWeight: FontWeight.bold),),
                   SizedBox(height: 20.h,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children:  [
-                       Text('Subtotal:',style: TextStyle(color:Colors.grey.shade700),),
-                      InkWell(onTap: ()=>buildShowModalBottomSheetOfProductDetail(context, true),
-                          child: const Text('\$2,850.00',style: TextStyle(),)),
+                       Text(LocaleKeys.subTotal.tr(),style: TextStyle(color:Colors.grey.shade700),),
+                      const Text('\$2,850.00',style: TextStyle(),),
                     ],
                   ),
                   const SizedBox(height: 5,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children:  [
-                       Text('Taxes:',style: TextStyle(color:Colors.grey.shade700),),
-                      InkWell(onTap: ()=>buildShowModalBottomSheetOfProductDetail(context, true),
-                          child: const Text('\$40.00',style: TextStyle(),)),
+                       Text(LocaleKeys.taxes.tr(),style: TextStyle(color:Colors.grey.shade700),),
+                      const Text('\$40.00',style: TextStyle(),),
                     ],
                   ),
                   const Divider(color: Colors.black54),
@@ -81,9 +78,8 @@ class DetailsOfPaymentBody extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children:  [
-                       const Text('Total:',style: TextStyle(),),
-                      InkWell(onTap: ()=>buildShowModalBottomSheetOfProductDetail(context, true),
-                          child: const Text('\$2,890.00',style: TextStyle(fontWeight: FontWeight.bold),)),
+                        Text(LocaleKeys.total.tr()),
+                      const Text('\$2,890.00',style: TextStyle(fontWeight: FontWeight.bold),),
                     ],
                   ),
                 ],
@@ -92,7 +88,7 @@ class DetailsOfPaymentBody extends StatelessWidget {
           ),
           const Spacer(),
           CustomButton(
-            text: 'Continue to Payment',
+            text: LocaleKeys.continuetoPayment.tr(),
             textColor: Colors.white,
             backgroundColor: kPrimaryColor,
             borderRadius: BorderRadius.circular(24),

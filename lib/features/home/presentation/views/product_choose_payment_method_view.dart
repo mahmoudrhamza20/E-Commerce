@@ -1,4 +1,3 @@
-
 import 'package:e_commerce/core/utils/constants.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/features/drawer/presentation/view/widgets/drawer_list_tile_app_bar.dart';
@@ -9,9 +8,15 @@ import '../../../../core/utils/magic_router.dart';
 import '../../../../core/widgets/credit_item.dart';
 import '../../../drawer/presentation/view/add_card_view.dart';
 
-class ProductChoosePaymentMethodView extends StatelessWidget {
+class ProductChoosePaymentMethodView extends StatefulWidget {
   const ProductChoosePaymentMethodView({Key? key}) : super(key: key);
 
+  @override
+  State<ProductChoosePaymentMethodView> createState() => _ProductChoosePaymentMethodViewState();
+}
+
+class _ProductChoosePaymentMethodViewState extends State<ProductChoosePaymentMethodView> {
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +34,13 @@ class ProductChoosePaymentMethodView extends StatelessWidget {
                 itemCount: 4,
                 itemBuilder: (context, index) =>     Padding(
                   padding: EdgeInsets.only(bottom: 10.h),
-                  child:const CreditItem(),
+                  child: InkWell(
+                     onTap: (){
+                   currentIndex = index;
+                     setState(() {});
+                    },
+                    child:  CreditItem(isSelected: currentIndex == index)
+                    ),
                 ),
               ),
             ),

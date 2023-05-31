@@ -14,7 +14,6 @@
   "pleaseProvideAValidEmailAddress": "Please provide a valid email address",
   "pleaseProvideAValidPasswordShouldGreaterThan8Character": "Please provide a valid password should greater than 8 character",
   "pleaseProvideAValidPhoneNumber": "Please provide a valid phone number",
-  "PleaseEnterASimilarPassword": "Please enter a similar password",
   "loggingYouIn": "Logging you in...",
   "bysigningupyouagreetotheermsofservice ": "By Signing up, you agree to the Terms of service and Privacy Policy",
   "name": "Name",
@@ -73,5 +72,10 @@
   "subTotal": "Subtotal:",
   "pay": "PAY",
   "addtoCart": "Add to Cart",
-  "welcome": "Welcome "
+  "welcome": "Welcome ",
+  "total": "Total",
+  "continuetoPayment": "Continue to Payment",
+  "paymentDetails": "Payment Details",
+  "change": "Change",
+  "pleaseEnterASimilarPassword": "Please enter a similar password"
 }

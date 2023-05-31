@@ -14,7 +14,6 @@
   "pleaseProvideAValidEmailAddress": "يرجى تقديم عنوان بريد إلكتروني صالح",
   "pleaseProvideAValidPasswordShouldGreaterThan8Character": "الرجاء إدخال كلمة مرور صالحة يجب أن تكون أكبر من 8 أحرف",
   "pleaseProvideAValidPhoneNumber": "الرجاء تقديم رقم هاتف صالح",
-  "PleaseEnterASimilarPassword": "الرجاء إدخال كلمة مرور مماثلة",
   "loggingYouIn": "جاري تسجيل دخولك ...",
   "bysigningupyouagreetotheermsofservice ": "بالتسجيل ، فإنك توافق على شروط الخدمة وسياسة الخصوصية",
   "name": "الإسم",
@@ -73,5 +72,10 @@
   "subTotal": "المجموع الفرعي:",
   "pay": "يدفع",
   "addtoCart": "أضف إلى السلة",
-  "welcome": "مرحباً"
+  "welcome": "مرحباً",
+  "total": "المجموع",
+  "continuetoPayment": "تابع إلى الدفع",
+  "paymentDetails": "بيانات الدفع",
+  "change": "تغيير",
+  "pleaseEnterASimilarPassword": "الرجاء إدخال كلمة مرور مماثلة"
 }

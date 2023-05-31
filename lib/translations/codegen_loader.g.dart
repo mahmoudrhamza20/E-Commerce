@@ -30,7 +30,6 @@ class CodegenLoader extends AssetLoader{
   "pleaseProvideAValidEmailAddress": "يرجى تقديم عنوان بريد إلكتروني صالح",
   "pleaseProvideAValidPasswordShouldGreaterThan8Character": "الرجاء إدخال كلمة مرور صالحة يجب أن تكون أكبر من 8 أحرف",
   "pleaseProvideAValidPhoneNumber": "الرجاء تقديم رقم هاتف صالح",
-  "PleaseEnterASimilarPassword": "الرجاء إدخال كلمة مرور مماثلة",
   "loggingYouIn": "جاري تسجيل دخولك ...",
   "bysigningupyouagreetotheermsofservice ": "بالتسجيل ، فإنك توافق على شروط الخدمة وسياسة الخصوصية",
   "name": "الإسم",
@@ -89,7 +88,12 @@ class CodegenLoader extends AssetLoader{
   "subTotal": "المجموع الفرعي:",
   "pay": "يدفع",
   "addtoCart": "أضف إلى السلة",
-  "welcome": "مرحباً"
+  "welcome": "مرحباً",
+  "total": "المجموع",
+  "continuetoPayment": "تابع إلى الدفع",
+  "paymentDetails": "بيانات الدفع",
+  "change": "تغيير",
+  "pleaseEnterASimilarPassword": "الرجاء إدخال كلمة مرور مماثلة"
 };
 static const Map<String,dynamic> en = {
   "login": "Log In",
@@ -107,7 +111,6 @@ static const Map<String,dynamic> en = {
   "pleaseProvideAValidEmailAddress": "Please provide a valid email address",
   "pleaseProvideAValidPasswordShouldGreaterThan8Character": "Please provide a valid password should greater than 8 character",
   "pleaseProvideAValidPhoneNumber": "Please provide a valid phone number",
-  "PleaseEnterASimilarPassword": "Please enter a similar password",
   "loggingYouIn": "Logging you in...",
   "bysigningupyouagreetotheermsofservice ": "By Signing up, you agree to the Terms of service and Privacy Policy",
   "name": "Name",
@@ -166,7 +169,12 @@ static const Map<String,dynamic> en = {
   "subTotal": "Subtotal:",
   "pay": "PAY",
   "addtoCart": "Add to Cart",
-  "welcome": "Welcome "
+  "welcome": "Welcome ",
+  "total": "Total",
+  "continuetoPayment": "Continue to Payment",
+  "paymentDetails": "Payment Details",
+  "change": "Change",
+  "pleaseEnterASimilarPassword": "Please enter a similar password"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }
