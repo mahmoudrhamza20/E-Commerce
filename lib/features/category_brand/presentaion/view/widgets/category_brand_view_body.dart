@@ -51,7 +51,7 @@ class CategoryBrandItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               image: const DecorationImage(
                  fit: BoxFit.cover,
-                image: AssetImage(AssetsData.background),
+                image: AssetImage(AppAssets.background),
               )
             ) ),
           const Text('Nike Sports',style: TextStyle(color: Colors.white,fontSize: 24,fontWeight: FontWeight.bold),),

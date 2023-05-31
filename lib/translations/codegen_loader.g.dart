@@ -10,7 +10,7 @@ class CodegenLoader extends AssetLoader{
   const CodegenLoader();
 
   @override
-  Future<Map<String, dynamic>> load(String fullPath, Locale locale ) {
+  Future<Map<String, dynamic>?> load(String path, Locale locale) {
     return Future.value(mapLocales[locale.toString()]);
   }
 
@@ -72,7 +72,24 @@ class CodegenLoader extends AssetLoader{
   "totalAmount": "المبلغ الإجمالي:",
   "orderId": "رقم الطلب:",
   "trackMyOrder": "متابعة طلبى",
-  "deliveryAddress": "عنوان التسليم"
+  "deliveryAddress": "عنوان التسليم",
+  "deliveryTo": "تسليم الى",
+  "viewAll": "عرض الكل >>",
+  "weekPromotion": "عرض الأسبوع",
+  "category": "فئة",
+  "recommended": "موصى به",
+  "endSaleIn": "إنهاء العرض في:",
+  "favorite": "مفضلة",
+  "search": "البحث",
+  "searchProductName": "ابحث عن اسم المنتج",
+  "recent": "مؤخرًا",
+  "categoryBrand": "ماركة الفئة",
+  "cart": "عربة التسوق",
+  "taxes": "الضرائب:",
+  "subTotal": "المجموع الفرعي:",
+  "pay": "يدفع",
+  "addtoCart": "أضف إلى السلة",
+  "welcome": "مرحباً"
 };
 static const Map<String,dynamic> en = {
   "login": "Log In",
@@ -132,7 +149,24 @@ static const Map<String,dynamic> en = {
   "totalAmount": "Total Amount:",
   "orderId": "Order Id:",
   "trackMyOrder": "Track My Order",
-  "deliveryAddress": "Delivery Address"
+  "deliveryAddress": "Delivery Address",
+  "deliveryTo": "Delivery To",
+  "viewAll": "View all >>",
+  "weekPromotion": "Week Promotion",
+  "category": "Category",
+  "recommended": "Recommended",
+  "endSaleIn": "End Sale In:",
+  "favorite": "Favorite",
+  "search": "Search",
+  "searchProductName": "Search Product Name",
+  "recent": "RECENT",
+  "categoryBrand": "Category Brand",
+  "cart": "Cart",
+  "taxes": "Taxes:",
+  "subTotal": "Subtotal:",
+  "pay": "PAY",
+  "addtoCart": "Add to Cart",
+  "welcome": "Welcome "
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

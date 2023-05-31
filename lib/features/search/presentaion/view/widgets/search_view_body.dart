@@ -1,8 +1,10 @@
 import 'package:e_commerce/features/search/presentaion/view/widgets/search_item.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/widgets/custom_text_form.dart';
+import '../../../../../translations/locale_keys.g.dart';
 
 class SearchViewBody extends StatelessWidget {
    SearchViewBody({Key? key}) : super(key: key);
@@ -21,7 +23,7 @@ class SearchViewBody extends StatelessWidget {
             isPrefix:false ,
             suffix: Icons.search_outlined,
             controller: searchController,
-            hintText: 'Search Product Name',
+            hintText: LocaleKeys.searchProductName.tr(),
             prefix: Icons.lock_outline_rounded,
            // suffixPressed: (){},
            // onSubmitted: (value){},
@@ -34,7 +36,7 @@ class SearchViewBody extends StatelessWidget {
             },
           ),
            SizedBox(height: 15.h,),
-          const Text('RECENT',style: TextStyle(color: Colors.grey),),
+           Text(LocaleKeys.recent.tr(),style:const TextStyle(color: Colors.grey),),
            SizedBox(height: 15.h,),
           Expanded(
             child: ListView.builder(

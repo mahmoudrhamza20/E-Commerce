@@ -1,5 +1,7 @@
 
 import 'package:e_commerce/features/drawer/presentation/view/widgets/menu_item.dart';
+import 'package:e_commerce/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utils/constants.dart';
@@ -29,8 +31,8 @@ class HomeViewBody extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children:  [
-                 Text('Menu',style: TextStyle(fontSize: 18.sp),),
-                InkWell(onTap: ()=>MagicRouter. navigateTo(const AllCategoriesView()),child: const Text('View all >>',style: TextStyle(color: kPrimaryColor),)),
+                 Text(LocaleKeys.menu.tr(),style: TextStyle(fontSize: 18.sp),),
+                InkWell(onTap: ()=>MagicRouter. navigateTo(const AllCategoriesView()),child:  Text(LocaleKeys.viewAll.tr(),style:const  TextStyle(color: kPrimaryColor),)),
               ],
             ),
             SizedBox(
@@ -44,7 +46,7 @@ class HomeViewBody extends StatelessWidget {
               ),
             ),
              SizedBox(height: 10.h, ),
-             Text('Week Promotion',style: TextStyle(fontSize: 18.sp),),
+             Text(LocaleKeys.weekPromotion.tr(),style: TextStyle(fontSize: 18.sp),),
              SizedBox(height: 10.h, ),
             SizedBox(
               height: 125.h,
@@ -61,7 +63,7 @@ class HomeViewBody extends StatelessWidget {
              SizedBox(height: 10.h, ),
             const SuperFlashSale(),
              SizedBox(height: 10.h, ),
-             Text('Category',style: TextStyle(fontSize: 18.sp),),
+             Text(LocaleKeys.category.tr(),style: TextStyle(fontSize: 18.sp),),
              SizedBox(height: 10.h, ),
             SizedBox(
               height: 130.h,
@@ -79,8 +81,8 @@ class HomeViewBody extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children:  [
-                 Text('Recommended',style: TextStyle(fontSize: 18.sp),),
-                InkWell(onTap: ()=>MagicRouter. navigateTo(const RecommendedView()),child: const Text('View all >>',style: TextStyle(color: kPrimaryColor),)),
+                 Text(LocaleKeys.recommended.tr(),style: TextStyle(fontSize: 18.sp),),
+                InkWell(onTap: ()=>MagicRouter. navigateTo(const RecommendedView()),child:  Text(LocaleKeys.viewAll.tr(),style:const TextStyle(color: kPrimaryColor),)),
               ],
             ),
              SizedBox(height: 10.h,),
@@ -90,7 +92,7 @@ class HomeViewBody extends StatelessWidget {
               itemCount: 4,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 1 / 1.7,
+                childAspectRatio: 1 / 1.72,
                 crossAxisSpacing: 1.0,
                 mainAxisSpacing: 1.0,
               ),
@@ -161,13 +163,13 @@ class SuperFlashSale extends StatelessWidget {
               ),
             ),
              Padding(
-              padding: EdgeInsets.all(8.0),
+              padding:const EdgeInsets.all(8.0),
               child: Text('Super Flash Sale 50% Off',style: TextStyle(color: Colors.white,fontSize: 20.sp,fontWeight: FontWeight.bold,overflow: TextOverflow.ellipsis),maxLines: 2,),
             ),
              Positioned(
               bottom: 50,
               right: 10,
-              child: Text('End Sale In:',style: TextStyle(color: Colors.white,fontSize: 13.sp,),),
+              child: Text(LocaleKeys.endSaleIn.tr(),style: TextStyle(color: Colors.white,fontSize: 13.sp,),),
 
             ),
              Positioned(

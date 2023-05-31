@@ -14,7 +14,7 @@ class ForgetPasswordView extends StatelessWidget {
         iconTheme:const IconThemeData(color: Colors.black, ) ,
         elevation: 0,
       ),
-      body: SafeArea(child: ForgetPasswordViewBody()),
+      body:const  SafeArea(child: ForgetPasswordViewBody()),
     );
   }
 }

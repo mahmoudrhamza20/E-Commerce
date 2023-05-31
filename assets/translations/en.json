@@ -56,5 +56,22 @@
   "totalAmount": "Total Amount:",
   "orderId": "Order Id:",
   "trackMyOrder": "Track My Order",
-  "deliveryAddress": "Delivery Address"
+  "deliveryAddress": "Delivery Address",
+  "deliveryTo": "Delivery To",
+  "viewAll": "View all >>",
+  "weekPromotion": "Week Promotion",
+  "category": "Category",
+  "recommended": "Recommended",
+  "endSaleIn": "End Sale In:",
+  "favorite": "Favorite",
+  "search": "Search",
+  "searchProductName": "Search Product Name",
+  "recent": "RECENT",
+  "categoryBrand": "Category Brand",
+  "cart": "Cart",
+  "taxes": "Taxes:",
+  "subTotal": "Subtotal:",
+  "pay": "PAY",
+  "addtoCart": "Add to Cart",
+  "welcome": "Welcome "
 }

@@ -13,7 +13,6 @@ import 'core/utils/cache_helper.dart';
 import 'core/utils/internet_connection_error.dart';
 import 'core/utils/magic_router.dart';
 import 'core/utils/network_info.dart';
-import 'features/main_screen/presentation/views_models/bottom_bar_cubit.dart';
 import 'features/splash/presentations/views/splash_view.dart';
 
 void main() async{
@@ -42,12 +41,11 @@ class _ECommerceState extends State<ECommerce> {
     Map _source = {ConnectivityResult.none: false};
 
   @override
-  void initState() {
-    
+  void initState() { 
   NetworkConnectivity.instance.initialise();
     NetworkConnectivity.instance.myStream.listen((source) {
       _source = source;
-      print('source $_source');
+      log('source $_source');
       switch (_source.keys.toList()[0]) {
         case ConnectivityResult.mobile:
           _source.values.toList()[0]
@@ -91,6 +89,7 @@ class _ECommerceState extends State<ECommerce> {
             supportedLocales: context.supportedLocales,
             locale: context.locale,
             debugShowCheckedModeBanner: false,
+            title: 'E-Commerce',
             theme: ThemeData( 
               fontFamily: kCairo,
                 scaffoldBackgroundColor: kBackground,

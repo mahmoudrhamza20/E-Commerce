@@ -20,11 +20,11 @@ class LanguageView extends StatelessWidget {
         child: Column(
           children:   [
             SizedBox(height: 20.h,),
-            LanguageCard(title:LocaleKeys.english.tr(),image: AssetsData.us_lang,onTap: (){ 
+            LanguageCard(title:LocaleKeys.english.tr(),image: AppAssets.usLang,onTap: (){ 
                context.setLocale(const Locale('en'));
                  CacheHelper.saveData(key: 'lang', value: 'en');
             }),
-            LanguageCard(title:LocaleKeys.arabic.tr(),image: AssetsData.ar_lang,onTap: (){
+            LanguageCard(title:LocaleKeys.arabic.tr(),image: AppAssets.arLang,onTap: (){
               context.setLocale(const Locale('ar'));
                    CacheHelper.saveData(key: 'lang', value: 'ar');
             })

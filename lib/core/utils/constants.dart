@@ -76,7 +76,7 @@ Future descriptionViewMore(BuildContext context) {
     shape:  RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(16.r),topRight: Radius.circular(16.r))),
     builder: (context) {
       return SizedBox(
-        height: MediaQuery.of(context).size.height*.4,
+        height: MediaQuery.of(context).size.height*.5,
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: Column(

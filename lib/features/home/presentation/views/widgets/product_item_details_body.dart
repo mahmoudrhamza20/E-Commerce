@@ -44,8 +44,8 @@ class ProductItemDetailsBody extends StatelessWidget {
                     children:  [
                        SizedBox(height: 20.h,),
                        Text('Mentli Solid Brown Bag...',maxLines: 2,style: TextStyle(fontSize: 18.sp,fontWeight:FontWeight.bold,overflow: TextOverflow.ellipsis),),
-                      Row(
-                        children: const [
+                     const Row(
+                        children:  [
                           Spacer(),
                           Icon(Icons.star,color: Colors.yellow,),
                           Text('4.5',style: TextStyle(fontWeight: FontWeight.bold),),
@@ -81,8 +81,8 @@ class ProductItemDetailsBody extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 3,),
-                      Row(
-                        children: const [
+                    const  Row(
+                        children:  [
                           CustomRatingBar(),
                           Text('  4.5 ',style: TextStyle(color: Colors.black45),),
                           Text('(5 Review)',style: TextStyle(color: Colors.black45),),

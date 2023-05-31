@@ -29,9 +29,9 @@ class FlashSaleViewBody extends StatelessWidget {
         child: Column(
           children: [
              SizedBox(height: 20.h,),
-            Row(
+          const  Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children:  [
                 Text('End in ',style: TextStyle(fontWeight: FontWeight.bold),),
                 Text('23:24:05 ',style: TextStyle(fontWeight: FontWeight.bold,color: kPrimaryColor),),
               ],
@@ -48,7 +48,7 @@ class FlashSaleViewBody extends StatelessWidget {
               itemCount: 6,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 1 / 1.7,
+                childAspectRatio: 1 / 1.9,
                 crossAxisSpacing: 1.0,
                 mainAxisSpacing: 1.0,
               ),

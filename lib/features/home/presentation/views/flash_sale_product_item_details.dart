@@ -116,8 +116,8 @@ class FlashSaleProductItemDetailsBody extends StatelessWidget {
                      crossAxisAlignment: CrossAxisAlignment.start,
                      children:  [
                         Text('Compact Camera High..',maxLines: 2,style: TextStyle(fontSize: 18.sp,fontWeight:FontWeight.bold,overflow: TextOverflow.ellipsis),),
-                       Row(
-                         children: const [
+                      const Row(
+                         children:  [
                            Spacer(),
                            Icon(Icons.star,color: Colors.yellow,),
                            Text('4.5',style: TextStyle(fontWeight: FontWeight.bold),),

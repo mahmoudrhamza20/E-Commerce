@@ -19,8 +19,8 @@ class ReviewsView extends StatelessWidget {
                 SizedBox(height: 20.h,),
              Text('Review Product',style: TextStyle(fontSize: 16.sp,fontWeight:FontWeight.bold,),),
                 SizedBox(height: 5.h,),
-            Row(
-              children: const [
+           const Row(
+              children:  [
                 CustomRatingBar(),
                 Text('  4.5 ',style: TextStyle(color: Colors.black45),),
                 Text('(5 Review)',style: TextStyle(color: Colors.black45),),

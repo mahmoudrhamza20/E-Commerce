@@ -23,7 +23,7 @@ class CategoryBrandDetailsView extends StatelessWidget {
                   centerTitle: true,
                   background:Stack(
                     children: [
-                      SizedBox(width: double.infinity,child: Image.asset(AssetsData.background,fit: BoxFit.cover)),
+                      SizedBox(width: double.infinity,child: Image.asset(AppAssets.background,fit: BoxFit.cover)),
                       Container(
                         width: double.infinity,
                         height: double.infinity,

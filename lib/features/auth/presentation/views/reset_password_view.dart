@@ -25,7 +25,7 @@ class ResetPasswordView extends StatelessWidget {
       ),
         body: BlocProvider<ResetPassCubit>(
           create: (context) => ResetPassCubit(),
-          child: SafeArea(
+          child:const  SafeArea(
             child: ResetPasswordViewBody()),
         )
     );

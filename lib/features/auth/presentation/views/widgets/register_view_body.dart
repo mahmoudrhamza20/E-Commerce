@@ -145,9 +145,9 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SocialButton(image: AssetsData.twitter,imgColor: Colors.blue),
-                    SocialButton(image: AssetsData.facebook,imgColor: Colors.blue.shade800,),
-                    const SocialButton(image: AssetsData.gmail,imgColor: Colors.red),
+                    const SocialButton(image: AppAssets.twitter,imgColor: Colors.blue),
+                    SocialButton(image: AppAssets.facebook,imgColor: Colors.blue.shade800,),
+                    const SocialButton(image: AppAssets.gmail,imgColor: Colors.red),
                   ],
                 ),
                  SizedBox(height:20.h ),

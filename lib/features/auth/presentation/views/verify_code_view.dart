@@ -8,7 +8,6 @@ import 'package:pinput/pinput.dart';
 import '../../../../core/utils/constants.dart';
 import '../../../../core/utils/magic_router.dart';
 import '../../../../core/utils/styles.dart';
-import '../../../../core/widgets/custom_button.dart';
 import '../../../../translations/locale_keys.g.dart';
 
 class VerifyCodeView extends StatefulWidget {
@@ -165,6 +164,7 @@ class CustomPinCode extends StatelessWidget {
                     style: const TextStyle(fontSize: 15),
                   ),
                 ));
+          return null;
         },
       pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
       showCursor: true,

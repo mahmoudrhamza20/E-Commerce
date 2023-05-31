@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utils/constants.dart';
 import '../../../../../core/utils/magic_router.dart';
 import '../../../../../core/widgets/custom_slider.dart';
-import 'menu_item_details_ view_Section.dart';
+import 'menu_item_details_ view_section.dart';
 
 class MenuItemDetailsViewBody extends StatelessWidget {
   const MenuItemDetailsViewBody({

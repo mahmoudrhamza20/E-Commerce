@@ -7,7 +7,7 @@ class CustomSlider extends StatelessWidget {
 final double height ;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return  SizedBox(
         child: CarouselSlider(
           options: CarouselOptions(
             autoPlay: true,

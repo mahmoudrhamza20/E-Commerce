@@ -2,7 +2,6 @@ import 'package:e_commerce/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../utils/constants.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField(
@@ -75,10 +74,10 @@ class CustomTextFormField extends StatelessWidget {
 
 Widget customTextField(
     {
-      @required Icon? endIcon,
-      @required Widget? prefix,
-      @required String? hintText,
-      @required Color? color,
+       Icon? endIcon,
+       Widget? prefix,
+       String? hintText,
+      Color? color,
       required bool isPassword,
       required TextInputType type,
       required TextEditingController controller,

@@ -1,7 +1,5 @@
 import 'dart:developer';
 import 'dart:io';
-
-import 'package:e_commerce/core/utils/cache_helper.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -40,12 +38,7 @@ Future pickImage() async {
       final image = await ImagePicker().pickImage(source: ImageSource.gallery);
 if(image == null) return;
 final imageTemp = File(image.path);
-setState(() => {
-  this.image = imageTemp,
-  //CacheHelper.saveData(key: 'photo', value: this.image)
-  }
-
-);
+setState(() => this.image = imageTemp,);
     } on PlatformException catch(e) {
       log('Failed to pick image: $e');
     }
@@ -78,7 +71,7 @@ setState(() => {
                           shape: BoxShape.circle,
 
                           color: kBackground,
-                          image:image==null?const DecorationImage(image: AssetImage(AssetsData.avtar),):DecorationImage(image: FileImage(image!,),fit: BoxFit.cover),),
+                          image:image==null?const DecorationImage(image: AssetImage(AppAssets.avtar),):DecorationImage(image: FileImage(image!,),fit: BoxFit.cover),),
                       ),
                        CircleAvatar(
                           radius: 15.r,
@@ -103,6 +96,7 @@ setState(() => {
                   if (data!.isEmpty) {
                     return ' Your Name Is Required';
                   }
+                  return null;
                 },
               ),
               SizedBox(height: 8.h,),
@@ -120,6 +114,7 @@ setState(() => {
                   if (data!.isEmpty) {
                     return ' Your Email Is Required';
                   }
+                  return null;
                 },
               ),
              SizedBox(height: 8.h,),
@@ -137,6 +132,7 @@ setState(() => {
                   if (data!.isEmpty) {
                     return ' Your Phone Is Required';
                   }
+                  return null;
                 },
               ),
               SizedBox(height: 8.h,),
@@ -154,6 +150,7 @@ setState(() => {
                   if (data!.isEmpty ) {
                     return ' Your Password Is Required';
                   }
+                  return null;
                 },
               ),
               SizedBox(height: MediaQuery.of(context).size.height*.05,),

@@ -31,7 +31,7 @@ Widget buildMenu(context) {
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: kBackground,
-                  image: DecorationImage(image: AssetImage(AssetsData.avtar),),),
+                  image: DecorationImage(image: AssetImage(AppAssets.avtar),),),
               ),
         ),
             Padding(

@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:country_picker/country_picker.dart';
 import 'package:e_commerce/features/auth/presentation/views/verify_code_view.dart';
 import 'package:e_commerce/translations/locale_keys.g.dart';
@@ -110,7 +109,7 @@ class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
                     backgroundColor: kPrimaryColor.withOpacity(.9),
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
-                       MagicRouter. navigateTo( VerifyCodeView());
+                       MagicRouter. navigateTo(const VerifyCodeView());
                       }
                     }
                 ),

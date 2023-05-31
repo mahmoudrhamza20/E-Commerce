@@ -45,7 +45,7 @@ class _FlashSaleProductItemState extends State<FlashSaleProductItem> {
                       ),
                       child: Center(
                           child: Image.asset(
-                            AssetsData.bag1,
+                            AppAssets.bag1,
                             height: 65.w,
                             width: 65.w,
                           )),

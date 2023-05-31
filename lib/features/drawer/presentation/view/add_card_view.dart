@@ -128,7 +128,7 @@ class AddCardViewBody extends StatelessWidget {
                   enabledBorder: border,
                   labelText: 'Card Holder',
                 ),
-                onCreditCardModelChange: (CreditCardModel) {},
+                onCreditCardModelChange: ( creditCardModel) {},
               )
             ]),
           ),

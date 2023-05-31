@@ -49,7 +49,7 @@ class _ProductItemState extends State<ProductItem> {
                               ),
                               child: Center(
                                   child: Image.asset(
-                                    AssetsData.bag1,
+                                    AppAssets.bag1,
                                     height: 80.w,
                                     width: 80.w,
                                   )),
@@ -70,7 +70,7 @@ class _ProductItemState extends State<ProductItem> {
                         ),
                         child: Center(
                             child: Image.asset(
-                              AssetsData.bag1,
+                              AppAssets.bag1,
                               height: 65.w,
                               width: 65.w,
                             )),

@@ -54,7 +54,7 @@ class PhoneAuthCubit extends Cubit<PhoneAuthState> {
 
    CacheHelper.saveData(key: 'receivedID', value: verificationId);
    //receivedID = verificationId;
-    MagicRouter.navigateTo( VerifyCodeView());
+    MagicRouter.navigateTo(const VerifyCodeView());
 
     emit(PhoneNumberSubmited());
   }
@@ -77,7 +77,7 @@ class PhoneAuthCubit extends Cubit<PhoneAuthState> {
       MagicRouter.navigateTo(const ResetPasswordView());
       emit(PhoneOTPVerified());
     } catch (error) {
-      print(error);
+      log('$error');
       emit(ErrorOccurred(errorMsg: error.toString()));
     }
   }

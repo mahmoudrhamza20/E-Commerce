@@ -1,5 +1,7 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
 
 import '../../../../core/utils/dio_helper.dart';
 import '../../../../core/utils/end_points.dart';
@@ -17,11 +19,12 @@ class PhoneAuthRepo {
     });
     try {
       if (response.statusCode == 200 && response.data['status'] == 'success') {
-        print("Success CheckPhoneRepo");
-        print(response);
+        log("Success CheckPhoneRepo");
+        if (kDebugMode) {
+          print(response);
+        }
         return Right(UserModel.fromJson(jsonDecode(response.toString())));
       } else {
-        print(response);
         return Left(
             ErrorPhoneAuthModel.fromJson(jsonDecode(response.toString()))
                 .errors

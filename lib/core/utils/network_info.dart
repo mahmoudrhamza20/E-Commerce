@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'dart:io';
 import 'package:connectivity_plus/connectivity_plus.dart';
 class NetworkConnectivity {
@@ -13,7 +14,7 @@ class NetworkConnectivity {
     ConnectivityResult result = await _networkConnectivity.checkConnectivity();
     _checkStatus(result);
     _networkConnectivity.onConnectivityChanged.listen((result) {
-      print(result);
+      log('$result');
       _checkStatus(result);
     });
   }

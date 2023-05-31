@@ -1,10 +1,12 @@
 import 'package:e_commerce/features/cart/presentaion/view_model/counter_cubit/counter_cubit.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/constants.dart';
 import '../../../../../core/widgets/custom_button.dart';
+import '../../../../../translations/locale_keys.g.dart';
 import 'inc_dec_button.dart';
 
 class CartViewBody extends StatelessWidget {const CartViewBody({Key? key,}) : super(key: key);
@@ -35,15 +37,15 @@ class CartViewBody extends StatelessWidget {const CartViewBody({Key? key,}) : su
         ),
         Padding(
           padding:  EdgeInsets.symmetric(horizontal: 20.w),
-          child: Row(
-            children: const [
+          child:  Row(
+            children: [
               Text(
-                "Subtotal:",
+               LocaleKeys.subTotal.tr(),
                 style:
-                    TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
+                    const TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
               ),
-              Spacer(),
-              Text('\$2,850.00',
+              const Spacer(),
+              const Text('\$2,850.00',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -56,15 +58,15 @@ class CartViewBody extends StatelessWidget {const CartViewBody({Key? key,}) : su
         ),
         Padding(
           padding:  EdgeInsets.symmetric(horizontal: 20.w),
-          child: Row(
-            children: const [
+          child:  Row(
+            children: [
               Text(
-                "Taxes:",
+                LocaleKeys.taxes.tr(),
                 style:
-                    TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
+                    const TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
               ),
-              Spacer(),
-              Text('\$40',
+              const Spacer(),
+              const Text('\$40',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -101,7 +103,7 @@ class CartViewBody extends StatelessWidget {const CartViewBody({Key? key,}) : su
                     ),
                     child:  Center(
                         child: Text(
-                      'PAY',
+                      LocaleKeys.pay.tr(),
                       style: TextStyle(color: Colors.white, fontSize: 16.sp),
                      ),
                     ),
@@ -158,7 +160,7 @@ class CartViewBody extends StatelessWidget {const CartViewBody({Key? key,}) : su
                     width: 150.w,
                     child: CustomButton(
                       backgroundColor: kPrimaryColor,
-                      text: 'Add to Cart',
+                      text:LocaleKeys.addtoCart.tr(),
                       textColor: Colors.white,
                       borderRadius: BorderRadius.circular(8),
                       onPressed: () {
@@ -195,7 +197,7 @@ class CartViewBody extends StatelessWidget {const CartViewBody({Key? key,}) : su
                 ),
                 child: Center(
                     child: Image.asset(
-                  AssetsData.bag,
+                  AppAssets.bag,
                   height: 40.w,
                   width: 40.w,
                 )),

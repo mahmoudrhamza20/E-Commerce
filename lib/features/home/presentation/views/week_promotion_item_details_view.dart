@@ -50,7 +50,7 @@ class WeekPromotionItemDetailsViewBody extends StatelessWidget {
               itemCount: 4,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 1 / 1.7,
+                childAspectRatio: 1 / 1.72,
                 crossAxisSpacing: 1.0,
                 mainAxisSpacing: 1.0,
               ),

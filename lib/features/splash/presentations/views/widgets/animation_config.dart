@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
 class HWAnimationConfig {
-  static MediaQueryData mediaQuery = MediaQueryData.fromWindow(ui.window);
+  static MediaQueryData mediaQuery = MediaQueryData.fromView(ui.window);
   static double screenWidth = mediaQuery.size.width;
   static double screenHeight = mediaQuery.size.height;
   static TweenSequence circleWidthTweenSequence = TweenSequence([

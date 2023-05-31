@@ -6,12 +6,12 @@ import 'package:e_commerce/features/splash/presentations/views/widgets/animation
 import 'package:e_commerce/features/splash/presentations/views/widgets/square_painter.dart';
 import 'package:e_commerce/features/splash/presentations/views/widgets/triangle_painter.dart';
 import 'package:e_commerce/features/splash/presentations/views/widgets/wave_progress.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../core/utils/cache_helper.dart';
 import '../../../../core/utils/magic_router.dart';
-import '../../../home/presentation/views/home_view.dart';
+import '../../../../translations/locale_keys.g.dart';
 import '../../../main_screen/presentation/views/main_view.dart';
 
 
@@ -54,17 +54,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
   late Animation _waveHeightTween;
   late Animation _textSizeTween;
   Timer? _timer;
-  _startDelay() {
-    _timer = Timer(const Duration(seconds: 3), _goNext);
-  }
-
-  _goNext() {
-    if (CacheHelper.getData(key: 'login') == true) {
-      MagicRouter.navigateAndPopAll(const MainScreen());
-    } else {
-      MagicRouter.navigateAndPopAll(const OnBoardingView());
-    }
-  }
 
   @override
   void initState() {
@@ -189,7 +178,7 @@ Timer(const Duration(seconds: 5),(){
                   ),
                 ),
                 Text(
-                  'Welcome',
+                 LocaleKeys.welcome.tr(),
                   style: TextStyle(
                     fontSize: _textSizeTween.value,
                     color: Colors.white,
