@@ -80,5 +80,6 @@ abstract class  LocaleKeys {
   static const paymentDetails = 'paymentDetails';
   static const change = 'change';
   static const pleaseEnterASimilarPassword = 'pleaseEnterASimilarPassword';
+  static const pleaseenteravalidname = 'pleaseenteravalidname';
 
 }

@@ -93,7 +93,8 @@ class CodegenLoader extends AssetLoader{
   "continuetoPayment": "تابع إلى الدفع",
   "paymentDetails": "بيانات الدفع",
   "change": "تغيير",
-  "pleaseEnterASimilarPassword": "الرجاء إدخال كلمة مرور مماثلة"
+  "pleaseEnterASimilarPassword": "الرجاء إدخال كلمة مرور مماثلة",
+  "pleaseenteravalidname": "الرجاء إدخال اسم صالح"
 };
 static const Map<String,dynamic> en = {
   "login": "Log In",
@@ -174,7 +175,8 @@ static const Map<String,dynamic> en = {
   "continuetoPayment": "Continue to Payment",
   "paymentDetails": "Payment Details",
   "change": "Change",
-  "pleaseEnterASimilarPassword": "Please enter a similar password"
+  "pleaseEnterASimilarPassword": "Please enter a similar password",
+  "pleaseenteravalidname": "Please enter a valid name"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": ar, "en": en};
 }

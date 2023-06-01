@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,6 +17,7 @@ class IncDecButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
+          alignment: Alignment.center,
           height: 30.w,
           width: 30.w,
           decoration: BoxDecoration(

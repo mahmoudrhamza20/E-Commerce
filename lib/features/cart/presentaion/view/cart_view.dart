@@ -22,8 +22,11 @@ class CartView extends StatelessWidget {
       type: SideMenuType.shrikNRotate,
       onChange: (isOpened) => AppBarDrawerCubit.get(context).changeStatus(),
       child: Scaffold(
-        appBar: buildHomeAppBar(context: context, title: LocaleKeys.cart.tr(),),
-        body:  const CartViewBody(),
+        appBar: buildHomeAppBar(
+          context: context,
+          title: LocaleKeys.cart.tr(),
+        ),
+        body: const CartViewBody(),
       ),
     );
   }

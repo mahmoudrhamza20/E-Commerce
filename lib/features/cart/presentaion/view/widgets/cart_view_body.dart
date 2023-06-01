@@ -9,21 +9,24 @@ import '../../../../../core/widgets/custom_button.dart';
 import '../../../../../translations/locale_keys.g.dart';
 import 'inc_dec_button.dart';
 
-class CartViewBody extends StatelessWidget {const CartViewBody({Key? key,}) : super(key: key);
+class CartViewBody extends StatelessWidget {
+  const CartViewBody({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-         SizedBox(
+        SizedBox(
           height: 10.h,
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height*.6,
+          height: MediaQuery.of(context).size.height * .6,
           child: Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 20.h),
+            padding: EdgeInsets.symmetric(horizontal: 20.h),
             child: ListView.builder(
-              physics: const BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 itemCount: 4,
                 itemBuilder: (context, index) {
                   return cartItem(
@@ -32,17 +35,17 @@ class CartViewBody extends StatelessWidget {const CartViewBody({Key? key,}) : su
                 }),
           ),
         ),
-         SizedBox(
+        SizedBox(
           height: 30.h,
         ),
         Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 20.w),
-          child:  Row(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          child: Row(
             children: [
               Text(
-               LocaleKeys.subTotal.tr(),
-                style:
-                    const TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
+                LocaleKeys.subTotal.tr(),
+                style: const TextStyle(
+                    color: Colors.grey, fontWeight: FontWeight.bold),
               ),
               const Spacer(),
               const Text('\$2,850.00',
@@ -53,17 +56,17 @@ class CartViewBody extends StatelessWidget {const CartViewBody({Key? key,}) : su
             ],
           ),
         ),
-         SizedBox(
+        SizedBox(
           height: 6.h,
         ),
         Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 20.w),
-          child:  Row(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          child: Row(
             children: [
               Text(
                 LocaleKeys.taxes.tr(),
-                style:
-                    const TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                    color: Colors.grey, fontWeight: FontWeight.bold),
               ),
               const Spacer(),
               const Text('\$40',
@@ -83,11 +86,11 @@ class CartViewBody extends StatelessWidget {const CartViewBody({Key? key,}) : su
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(25), topRight: Radius.circular(25))),
           child: Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 16.w),
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                 Text('\$2,850.00',
+                Text('\$2,850.00',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -95,18 +98,18 @@ class CartViewBody extends StatelessWidget {const CartViewBody({Key? key,}) : su
                         fontSize: 22.sp,
                         fontWeight: FontWeight.bold)),
                 Container(
-                    height: 30.h,
-                    width: 80.w,
-                    decoration: BoxDecoration(
-                      color: kPrimaryColor,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child:  Center(
-                        child: Text(
+                  height: 30.h,
+                  width: 80.w,
+                  decoration: BoxDecoration(
+                    color: kPrimaryColor,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                    child: Text(
                       LocaleKeys.pay.tr(),
                       style: TextStyle(color: Colors.white, fontSize: 16.sp),
-                     ),
                     ),
+                  ),
                 ),
               ],
             ),
@@ -116,63 +119,70 @@ class CartViewBody extends StatelessWidget {const CartViewBody({Key? key,}) : su
     );
   }
 
-  Future<dynamic> buildCartShowDialog(BuildContext context,) {
+  Future<dynamic> buildCartShowDialog(
+    BuildContext context,
+  ) {
     return showDialog(
       context: context,
-      builder: (context) => BlocBuilder<CounterCubit, CounterState>(
-        builder: (context, state) {
-          return AlertDialog(
-            shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16.0))),
-            content: SizedBox(
-              height: MediaQuery.of(context).size.height * .3,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  IncDecButton(
-                    widget: const Icon(
-                      Icons.add,
-                      color: Colors.white,
-                    ),
-                    onTap: () {
-                      CounterCubit.get(context).add();
-                    },
-                  ),
-                  Text(
-                    '${CounterCubit.get(context).currentVal}',
-                    style:  TextStyle(
-                        fontSize: 20.sp, fontWeight: FontWeight.bold),
-                  ),
-                  IncDecButton(
-                    widget:  Center(
-                        child: Text(
-                      '-',
-                      style: TextStyle(color: Colors.white, fontSize: 25.sp),
-                    )),
-                    onTap: () {
-                      CounterCubit.get(context).min();
-                    },
-                  ),
-                   SizedBox(
-                    height: 15.h,
-                  ),
-                  SizedBox(
-                    width: 150.w,
-                    child: CustomButton(
-                      backgroundColor: kPrimaryColor,
-                      text:LocaleKeys.addtoCart.tr(),
-                      textColor: Colors.white,
-                      borderRadius: BorderRadius.circular(8),
-                      onPressed: () {
-                        Navigator.pop(context);
+      builder: (context) => BlocProvider<CounterCubit>(
+        create: (context) => CounterCubit(),
+        child: BlocBuilder<CounterCubit, CounterState>(
+          builder: (context, state) {
+            return AlertDialog(
+              shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(16.0))),
+              content: SizedBox(
+                height: MediaQuery.of(context).size.height * .3,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    IncDecButton(
+                      widget: const Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                      onTap: () {
+                        CounterCubit.get(context).add();
                       },
                     ),
-                  ),
-                ],
+                    Text(
+                      '${CounterCubit.get(context).currentVal}',
+                      style: TextStyle(
+                          fontSize: 20.sp, fontWeight: FontWeight.bold),
+                    ),
+                    IncDecButton(
+                      widget: const Padding(
+                        padding: EdgeInsets.only(bottom: 10),
+                        child: Icon(
+                          Icons.minimize,
+                          color: Colors.white,
+                        ),
+                      ),
+                      onTap: () {
+                        CounterCubit.get(context).min();
+                      },
+                    ),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    SizedBox(
+                      width: 150.w,
+                      child: CustomButton(
+                        backgroundColor: kPrimaryColor,
+                        text: LocaleKeys.addtoCart.tr(),
+                        textColor: Colors.white,
+                        borderRadius: BorderRadius.circular(8),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
@@ -203,7 +213,7 @@ class CartViewBody extends StatelessWidget {const CartViewBody({Key? key,}) : su
                 )),
               ),
               Padding(
-                padding:  EdgeInsets.only(left: 8.w),
+                padding: EdgeInsets.only(left: 8.w),
                 child: SizedBox(
                   width: 170.w,
                   child: Column(
@@ -215,7 +225,7 @@ class CartViewBody extends StatelessWidget {const CartViewBody({Key? key,}) : su
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                       SizedBox(
+                      SizedBox(
                         height: 12.h,
                       ),
                       Row(
@@ -248,7 +258,7 @@ class CartViewBody extends StatelessWidget {const CartViewBody({Key? key,}) : su
                           )
                         ],
                       ),
-                       SizedBox(
+                      SizedBox(
                         height: 12.h,
                       ),
                       const Text('\$950,00',

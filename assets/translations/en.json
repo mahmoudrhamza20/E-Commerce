@@ -77,5 +77,6 @@
   "continuetoPayment": "Continue to Payment",
   "paymentDetails": "Payment Details",
   "change": "Change",
-  "pleaseEnterASimilarPassword": "Please enter a similar password"
+  "pleaseEnterASimilarPassword": "Please enter a similar password",
+  "pleaseenteravalidname": "Please enter a valid name"
 }

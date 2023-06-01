@@ -77,5 +77,6 @@
   "continuetoPayment": "تابع إلى الدفع",
   "paymentDetails": "بيانات الدفع",
   "change": "تغيير",
-  "pleaseEnterASimilarPassword": "الرجاء إدخال كلمة مرور مماثلة"
+  "pleaseEnterASimilarPassword": "الرجاء إدخال كلمة مرور مماثلة",
+  "pleaseenteravalidname": "الرجاء إدخال اسم صالح"
 }

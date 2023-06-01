@@ -8,14 +8,17 @@ class CounterCubit extends Cubit<CounterState> {
   static CounterCubit get(context) => BlocProvider.of(context);
 
   int currentVal = 0;
- void add(){
-   emit(CounterInitial());
-   currentVal ++ ;
-   emit(CounterPlus());
- }
-  void min(){
+  void add() {
     emit(CounterInitial());
-    currentVal -- ;
-    emit(CounterMin());
+    currentVal++;
+    emit(CounterPlus());
+  }
+
+  void min() {
+    emit(CounterInitial());
+    if (currentVal > 0) {
+      currentVal--;
+      emit(CounterMin());
+    }
   }
 }
