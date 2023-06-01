@@ -7,29 +7,32 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
 import '../../../../core/utils/constants.dart';
 import '../../../../core/utils/magic_router.dart';
-import '../../../../core/utils/styles.dart';
+import '../../../../core/utils/app_text_style.dart';
 import '../../../../translations/locale_keys.g.dart';
 
 class VerifyCodeView extends StatefulWidget {
- const  VerifyCodeView({Key? key}) : super(key: key);
+  const VerifyCodeView({Key? key}) : super(key: key);
 
   @override
   State<VerifyCodeView> createState() => _VerifyCodeViewState();
 }
 
 class _VerifyCodeViewState extends State<VerifyCodeView> {
-   final  defaultPinTheme = PinTheme(
-     width: 56.w,
-     height: 56.w,
-     textStyle: const TextStyle(fontSize: 20, color: Color.fromRGBO(30, 60, 87, 1), fontWeight: FontWeight.w600),
-     decoration: BoxDecoration(
-       color: Colors.grey.shade300,
-       borderRadius: BorderRadius.circular(30),
-       //border: Border.all(color: Colors.grey),
-     ),
-   );
+  final defaultPinTheme = PinTheme(
+    width: 56.w,
+    height: 56.w,
+    textStyle: const TextStyle(
+        fontSize: 20,
+        color: Color.fromRGBO(30, 60, 87, 1),
+        fontWeight: FontWeight.w600),
+    decoration: BoxDecoration(
+      color: Colors.grey.shade300,
+      borderRadius: BorderRadius.circular(30),
+      //border: Border.all(color: Colors.grey),
+    ),
+  );
 
-   int timeLeft = 0;
+  int timeLeft = 0;
 
   void _startCountDown() {
     timeLeft = 30;
@@ -50,58 +53,65 @@ class _VerifyCodeViewState extends State<VerifyCodeView> {
       appBar: AppBar(
         automaticallyImplyLeading: true,
         backgroundColor: Colors.white,
-        iconTheme:const IconThemeData(color: Colors.black, ) ,
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
         elevation: 0,
       ),
       body: SafeArea(
         child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 16.w),
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                 SizedBox(
+                SizedBox(
                   height: 50.h,
                 ),
-                  Text(
+                Text(
                   LocaleKeys.phoneVerification.tr(),
-                  style: Styles.textStyle24.copyWith(
-                      color: const Color(0xff223263)),
+                  style: AppTextStyle.textStyle24
+                      .copyWith(color: const Color(0xff223263)),
                 ),
-                 SizedBox(
+                SizedBox(
                   height: 8.h,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                     LocaleKeys.pleaseenterthedigitscodesendtoyouat.tr(),
-                      style: Styles.textStyle12.copyWith(
-                          color: const Color(0xff9098B1)),
+                      LocaleKeys.pleaseenterthedigitscodesendtoyouat.tr(),
+                      style: AppTextStyle.textStyle12
+                          .copyWith(color: const Color(0xff9098B1)),
                     ),
-                    const SizedBox(height: 5,),
+                    const SizedBox(
+                      height: 5,
+                    ),
                     Text(
                       '+91 12345 67890',
-                      style: Styles.textStyle12.copyWith(
+                      style: AppTextStyle.textStyle12.copyWith(
                         fontWeight: FontWeight.bold,
-                          color: const Color(0xff9098B1),),
+                        color: const Color(0xff9098B1),
+                      ),
                     ),
-                      SizedBox(height: 30.h,), 
+                    SizedBox(
+                      height: 30.h,
+                    ),
                     CustomPinCode(defaultPinTheme: defaultPinTheme),
-                        timeLeft == 0
-                      ? InkWell(
-                          onTap: _startCountDown,
-                          child: Text(LocaleKeys.resendCode.tr(),
-                              style: Styles.textStyle16.copyWith(
-                                color: kPrimaryColor,
-                                decoration: TextDecoration.underline,
-                              )))
-                      : Text(
-                          "${LocaleKeys.resendCode.tr()} ( 0:${timeLeft.toString()} )",
-                          style: Styles.textStyle16.copyWith(
-                            color: kPrimaryColor,
-                            decoration: TextDecoration.underline,
-                          )),
+                    timeLeft == 0
+                        ? InkWell(
+                            onTap: _startCountDown,
+                            child: Text(LocaleKeys.resendCode.tr(),
+                                style: AppTextStyle.textStyle16.copyWith(
+                                  color: kPrimaryColor,
+                                  decoration: TextDecoration.underline,
+                                )))
+                        : Text(
+                            "${LocaleKeys.resendCode.tr()} ( 0:${timeLeft.toString()} )",
+                            style: AppTextStyle.textStyle16.copyWith(
+                              color: kPrimaryColor,
+                              decoration: TextDecoration.underline,
+                            )),
                   ],
                 ),
                 // SizedBox(
@@ -114,14 +124,12 @@ class _VerifyCodeViewState extends State<VerifyCodeView> {
                 //       MagicRouter. navigateTo(const ResetPasswordView());
                 //     }
                 // )
-              
               ],
             ),
           ),
         ),
       ),
     );
-
   }
 }
 
@@ -139,13 +147,15 @@ class CustomPinCode extends StatelessWidget {
       width: 350.w,
       height: 80.h,
       child: Pinput(
-       length: 6,
+        length: 6,
         defaultPinTheme: defaultPinTheme,
         focusedPinTheme: defaultPinTheme.copyWith(
           decoration: defaultPinTheme.decoration!.copyWith(
             borderRadius: BorderRadius.circular(30),
             color: Colors.white,
-            border: Border.all(color: kPrimaryColor),),),
+            border: Border.all(color: kPrimaryColor),
+          ),
+        ),
         submittedPinTheme: defaultPinTheme.copyWith(
           decoration: defaultPinTheme.decoration!.copyWith(
             color: Colors.white,
@@ -153,7 +163,7 @@ class CustomPinCode extends StatelessWidget {
             border: Border.all(color: kPrimaryColor),
           ),
         ),
-      validator: (s) {
+        validator: (s) {
           s == '222222'
               ? MagicRouter.navigateTo(const ResetPasswordView())
               : ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -166,12 +176,10 @@ class CustomPinCode extends StatelessWidget {
                 ));
           return null;
         },
-      pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
-      showCursor: true,
-      onCompleted: (pin) => log(pin),
-          ),
+        pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
+        showCursor: true,
+        onCompleted: (pin) => log(pin),
+      ),
     );
   }
 }
-
-

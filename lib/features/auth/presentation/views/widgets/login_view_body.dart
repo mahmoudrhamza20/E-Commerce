@@ -8,7 +8,7 @@ import '../../../../../core/utils/cache_helper.dart';
 import '../../../../../core/utils/constants.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/magic_router.dart';
-import '../../../../../core/utils/styles.dart';
+import '../../../../../core/utils/app_text_style.dart';
 import '../../../../../core/widgets/custom_button.dart';
 import '../../../../../core/widgets/custom_icon.dart';
 import '../../../../../core/widgets/custom_snackbar.dart';
@@ -66,14 +66,16 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   ),
                   Text(
                     LocaleKeys.letsGetStarted.tr(),
-                    style: Styles.textStyle24.copyWith(color: Colors.black),
+                    style:
+                        AppTextStyle.textStyle24.copyWith(color: Colors.black),
                   ),
                   SizedBox(
                     height: 8.h,
                   ),
                   Text(
                     LocaleKeys.loginwithsocialoffilltheFormToContinue.tr(),
-                    style: Styles.textStyle12.copyWith(color: Colors.black38),
+                    style: AppTextStyle.textStyle12
+                        .copyWith(color: Colors.black38),
                   ),
                   SizedBox(
                     height: 20.h,
@@ -129,7 +131,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                         children: [
                           Text(
                             LocaleKeys.resetPassword.tr(),
-                            style: Styles.textStyle14
+                            style: AppTextStyle.textStyle14
                                 .copyWith(color: kPrimaryColor),
                           ),
                         ],
@@ -219,7 +221,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     children: [
                       Text(
                         LocaleKeys.dontHaveAnAccount.tr(),
-                        style: Styles.textStyle12
+                        style: AppTextStyle.textStyle12
                             .copyWith(color: const Color(0xff9098B1)),
                       ),
                       InkWell(
@@ -228,7 +230,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                           },
                           child: Text(
                             LocaleKeys.signUp.tr(),
-                            style: Styles.textStyle14
+                            style: AppTextStyle.textStyle14
                                 .copyWith(color: kPrimaryColor),
                           )),
                     ],

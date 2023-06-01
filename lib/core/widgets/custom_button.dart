@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../utils/styles.dart';
+import '../utils/app_text_style.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton(
@@ -11,9 +11,8 @@ class CustomButton extends StatelessWidget {
       this.borderRadius,
       this.fontSize,
       required this.backgroundColor,
-        this.onPressed,
-        this.borderColor
-      })
+      this.onPressed,
+      this.borderColor})
       : super(key: key);
   final String text;
   final Color textColor;
@@ -21,7 +20,7 @@ class CustomButton extends StatelessWidget {
   final Color? borderColor;
   final double? fontSize;
   final Color backgroundColor;
-  final void Function()? onPressed ;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -37,7 +36,7 @@ class CustomButton extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: Styles.textStyle14.copyWith(
+          style: AppTextStyle.textStyle14.copyWith(
             color: textColor,
             fontSize: fontSize,
           ),
