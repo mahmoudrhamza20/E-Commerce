@@ -219,7 +219,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                             return;
                           }
                           CacheHelper.saveData(key: 'login', value: true);
-                          MagicRouter.navigateTo(const MainScreen());
+                          MagicRouter.navigateAndPopAll(const MainScreen());
                         }
                       }),
                   SizedBox(
