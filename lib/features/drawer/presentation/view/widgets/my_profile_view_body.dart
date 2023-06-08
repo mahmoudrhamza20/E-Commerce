@@ -31,15 +31,17 @@ class _MyProfileViewBodyState extends State<MyProfileViewBody> {
 
   final GlobalKey<FormState> formKey = GlobalKey();
 
-File? image;
+  File? image;
 
-Future pickImage() async {
+  Future pickImage() async {
     try {
       final image = await ImagePicker().pickImage(source: ImageSource.gallery);
-if(image == null) return;
-final imageTemp = File(image.path);
-setState(() => this.image = imageTemp,);
-    } on PlatformException catch(e) {
+      if (image == null) return;
+      final imageTemp = File(image.path);
+      setState(
+        () => this.image = imageTemp,
+      );
+    } on PlatformException catch (e) {
       log('Failed to pick image: $e');
     }
   }
@@ -51,60 +53,88 @@ setState(() => this.image = imageTemp,);
       child: Form(
         key: formKey,
         child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 16.w),
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-               SizedBox(height: 20.h,),
+              SizedBox(
+                height: 20.h,
+              ),
               Center(
                 child: InkWell(
-                   onTap: ()=> {
-                        pickImage(),
-                        },
+                  onTap: () => {
+                    pickImage(),
+                  },
                   child: Stack(
                     alignment: Alignment.bottomRight,
                     children: [
                       Container(
                         height: 100.w,
                         width: 100.w,
-                        decoration:    BoxDecoration(
+                        decoration: BoxDecoration(
                           shape: BoxShape.circle,
-
                           color: kBackground,
-                          image:image==null?const DecorationImage(image: AssetImage(AppAssets.avtar),):DecorationImage(image: FileImage(image!,),fit: BoxFit.cover),),
+                          image: image == null
+                              ? const DecorationImage(
+                                  image: AssetImage(AppAssets.avtar),
+                                )
+                              : DecorationImage(
+                                  image: FileImage(
+                                    image!,
+                                  ),
+                                  fit: BoxFit.cover),
+                        ),
                       ),
-                       CircleAvatar(
+                      CircleAvatar(
                           radius: 15.r,
                           backgroundColor: kPrimaryColor,
-                          child:const Icon(Icons.mode_edit_outline_outlined,color: Colors.white,size: 20,)),
+                          child: const Icon(
+                            Icons.mode_edit_outline_outlined,
+                            color: Colors.white,
+                            size: 20,
+                          )),
                     ],
                   ),
                 ),
               ),
-               SizedBox(height: 8.h,),
-               Text(LocaleKeys.fullName.tr(),style: TextStyle(color: Colors.black,fontSize: 14.sp),),
-              SizedBox(height: 8.h,),
+              SizedBox(
+                height: 8.h,
+              ),
+              Text(
+                LocaleKeys.fullName.tr(),
+                style: TextStyle(color: Colors.black, fontSize: 14.sp),
+              ),
+              SizedBox(
+                height: 8.h,
+              ),
               CustomTextFormField(
                 isBorder: false,
                 isPassword: true,
-                isPrefix:false ,
+                isPrefix: false,
                 controller: nameController,
                 hintText: 'Mahmoud',
                 prefix: Icons.lock_outline_rounded,
                 inputType: TextInputType.name,
                 validator: (data) {
                   if (data!.isEmpty) {
-                    return ' Your Name Is Required';
+                    return LocaleKeys.yurNameIsRequired.tr();
                   }
                   return null;
                 },
               ),
-              SizedBox(height: 8.h,),
-               Text(LocaleKeys.emailAddress.tr(),style: TextStyle(color: Colors.black,fontSize: 14.sp),),
-              SizedBox(height: 8.h,),
+              SizedBox(
+                height: 8.h,
+              ),
+              Text(
+                LocaleKeys.emailAddress.tr(),
+                style: TextStyle(color: Colors.black, fontSize: 14.sp),
+              ),
+              SizedBox(
+                height: 8.h,
+              ),
               CustomTextFormField(
                 isPassword: true,
-                isPrefix:false ,
+                isPrefix: false,
                 isBorder: false,
                 controller: emailController,
                 hintText: 'mahmoud@gmail.com',
@@ -112,17 +142,24 @@ setState(() => this.image = imageTemp,);
                 inputType: TextInputType.emailAddress,
                 validator: (data) {
                   if (data!.isEmpty) {
-                    return ' Your Email Is Required';
+                    return LocaleKeys.yourEmailIsRequired.tr();
                   }
                   return null;
                 },
               ),
-             SizedBox(height: 8.h,),
-               Text(LocaleKeys.phoneNumber.tr(),style: TextStyle(color: Colors.black,fontSize: 14.sp),),
-             SizedBox(height: 8.h,),
+              SizedBox(
+                height: 8.h,
+              ),
+              Text(
+                LocaleKeys.phoneNumber.tr(),
+                style: TextStyle(color: Colors.black, fontSize: 14.sp),
+              ),
+              SizedBox(
+                height: 8.h,
+              ),
               CustomTextFormField(
                 isPassword: true,
-                isPrefix:false ,
+                isPrefix: false,
                 isBorder: false,
                 controller: phoneController,
                 hintText: '01000000000',
@@ -130,30 +167,39 @@ setState(() => this.image = imageTemp,);
                 inputType: TextInputType.number,
                 validator: (data) {
                   if (data!.isEmpty) {
-                    return ' Your Phone Is Required';
+                    return LocaleKeys.yourPhoneIRequired.tr();
                   }
                   return null;
                 },
               ),
-              SizedBox(height: 8.h,),
-                Text(LocaleKeys.password.tr(),style: TextStyle(color: Colors.black,fontSize: 14.sp),),
-              SizedBox(height: 8.h,),
+              SizedBox(
+                height: 8.h,
+              ),
+              Text(
+                LocaleKeys.password.tr(),
+                style: TextStyle(color: Colors.black, fontSize: 14.sp),
+              ),
+              SizedBox(
+                height: 8.h,
+              ),
               CustomTextFormField(
                 isPassword: true,
-                isPrefix:false ,
+                isPrefix: false,
                 isBorder: false,
                 controller: passwordController,
                 hintText: '*********',
                 prefix: Icons.lock_outline_rounded,
                 inputType: TextInputType.visiblePassword,
                 validator: (data) {
-                  if (data!.isEmpty ) {
-                    return ' Your Password Is Required';
+                  if (data!.isEmpty) {
+                    return LocaleKeys.yourPasswordIsRequired.tr();
                   }
                   return null;
                 },
               ),
-              SizedBox(height: MediaQuery.of(context).size.height*.05,),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .05,
+              ),
               CustomButton(
                   text: LocaleKeys.update.tr(),
                   textColor: Colors.white,
@@ -163,9 +209,10 @@ setState(() => this.image = imageTemp,);
                     if (formKey.currentState!.validate()) {
                       // navigateTo(context, AppRouter.kLoginView);
                     }
-                  }
-              ),
-               SizedBox(height: 10.h,)
+                  }),
+              SizedBox(
+                height: 10.h,
+              )
             ],
           ),
         ),

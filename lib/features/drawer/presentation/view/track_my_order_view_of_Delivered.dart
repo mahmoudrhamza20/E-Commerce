@@ -6,23 +6,33 @@ import 'package:flutter/material.dart';
 import '../../../../core/utils/constants.dart';
 import '../../../../translations/locale_keys.g.dart';
 
-
 class TrackMyOrderViewOfDelivered extends StatelessWidget {
   const TrackMyOrderViewOfDelivered({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: drawerListTileAppBar(title:  LocaleKeys.trackMyOrder.tr(),),
-      body:  TrackMyOrderViewBody(activeIndex:2,stepperData1: [
-        customStepperData(title:"Order Placed" ,subtitle: "We have received your order, 10:04",color:kPrimaryColor ),
-        customStepperData(title:"Payment Confirmation" ,subtitle: "Awaiting confirmation..., 10:06",color:kPrimaryColor ),
-        customStepperData(title: "Order Processed" ,subtitle: "We have preparing your order., 10:08",color:kPrimaryColor ),
-        customStepperData(title:"Ready to Pickup" ,subtitle:'Order from SpingoShop, 11:00',color:kPrimaryColor.withOpacity(.6) ),
-        ]),
+      appBar: drawerListTileAppBar(
+        title: LocaleKeys.trackMyOrder.tr(),
+      ),
+      body: TrackMyOrderViewBody(activeIndex: 2, stepperData1: [
+        customStepperData(
+            title: LocaleKeys.orderPlaced.tr(),
+            subtitle: "${LocaleKeys.wehavereceivedyourorder.tr()}, 10:04",
+            color: kPrimaryColor),
+        customStepperData(
+            title: LocaleKeys.paymentConfirmation.tr(),
+            subtitle: "${LocaleKeys.awaitingconfirmation.tr()}, 10:06",
+            color: kPrimaryColor),
+        customStepperData(
+            title: LocaleKeys.orderProcessed.tr(),
+            subtitle: LocaleKeys.wehavepreparingyouorder.tr(),
+            color: kPrimaryColor),
+        customStepperData(
+            title: LocaleKeys.readytoPickup.tr(),
+            subtitle: 'Order from SpingoShop, 11:00',
+            color: kPrimaryColor.withOpacity(.6)),
+      ]),
     );
   }
-
 }
-
-

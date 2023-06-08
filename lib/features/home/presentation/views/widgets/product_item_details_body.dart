@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utils/constants.dart';
@@ -7,6 +8,7 @@ import '../../../../../core/widgets/custom_button.dart';
 import '../../../../../core/widgets/custom_rating_bar.dart';
 import '../../../../../core/widgets/product_item.dart';
 import '../../../../../core/widgets/product_review_section.dart';
+import '../../../../../translations/locale_keys.g.dart';
 import '../reviews_view.dart';
 
 class ProductItemDetailsBody extends StatelessWidget {
@@ -93,9 +95,9 @@ class ProductItemDetailsBody extends StatelessWidget {
               SizedBox(
                 height: 10.h,
               ),
-              const Text(
-                'Description',
-                style: TextStyle(
+              Text(
+                LocaleKeys.description.tr(),
+                style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     overflow: TextOverflow.ellipsis),
@@ -120,7 +122,7 @@ class ProductItemDetailsBody extends StatelessWidget {
                   },
                   child: Center(
                       child: Text(
-                    'View More ',
+                    LocaleKeys.viewMore.tr(),
                     style: TextStyle(
                         fontSize: 16.sp,
                         fontWeight: FontWeight.bold,
@@ -133,7 +135,7 @@ class ProductItemDetailsBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Review Product',
+                    LocaleKeys.reviewProduct.tr(),
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
@@ -141,25 +143,25 @@ class ProductItemDetailsBody extends StatelessWidget {
                   ),
                   InkWell(
                       onTap: () => MagicRouter.navigateTo(const ReviewsView()),
-                      child: const Text(
-                        'View all >>',
-                        style: TextStyle(color: kPrimaryColor),
+                      child: Text(
+                        LocaleKeys.viewAll.tr(),
+                        style: const TextStyle(color: kPrimaryColor),
                       )),
                 ],
               ),
               const SizedBox(
                 height: 3,
               ),
-              const Row(
+              Row(
                 children: [
-                  CustomRatingBar(),
-                  Text(
+                  const CustomRatingBar(),
+                  const Text(
                     '  4.5 ',
                     style: TextStyle(color: Colors.black45),
                   ),
                   Text(
-                    '(5 Review)',
-                    style: TextStyle(color: Colors.black45),
+                    '(5 ${LocaleKeys.reviews.tr()})',
+                    style: const TextStyle(color: Colors.black45),
                   ),
                 ],
               ),
@@ -172,15 +174,15 @@ class ProductItemDetailsBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Top Rated Products',
+                    LocaleKeys.topRatedProducts.tr(),
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const Text(
-                    'View all >>',
-                    style: TextStyle(color: kPrimaryColor),
+                  Text(
+                    LocaleKeys.viewAll.tr(),
+                    style: const TextStyle(color: kPrimaryColor),
                   ),
                 ],
               ),
@@ -216,7 +218,7 @@ class ProductItemDetailsBody extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .72,
                     child: CustomButton(
-                      text: 'Pay',
+                      text: LocaleKeys.pay.tr(),
                       textColor: Colors.white,
                       backgroundColor: kPrimaryColor,
                       borderRadius: BorderRadius.circular(16),

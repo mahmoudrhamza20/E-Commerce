@@ -1,22 +1,18 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/widgets/product_item.dart';
 import '../../../drawer/presentation/view/widgets/drawer_list_tile_app_bar.dart';
 
 class HomeCategorySubCategoryItemDetails extends StatelessWidget {
-  const HomeCategorySubCategoryItemDetails ({Key? key}) : super(key: key);
+  const HomeCategorySubCategoryItemDetails({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: drawerListTileAppBar(title: 'Mans'),
-        body: const HomeCategorySubCategoryItemDetailsBody()
-    );
+        body: const HomeCategorySubCategoryItemDetailsBody());
   }
 }
-
 
 class HomeCategorySubCategoryItemDetailsBody extends StatelessWidget {
   const HomeCategorySubCategoryItemDetailsBody({
@@ -26,10 +22,12 @@ class HomeCategorySubCategoryItemDetailsBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 20.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: Column(
-        children:  [
-           SizedBox(height: 20.h,),
+        children: [
+          SizedBox(
+            height: 20.h,
+          ),
           Expanded(
             child: GridView.builder(
               shrinkWrap: true,

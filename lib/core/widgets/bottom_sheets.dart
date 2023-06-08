@@ -1,9 +1,11 @@
 import 'package:e_commerce/core/utils/magic_router.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../features/drawer/presentation/view/add_address_view.dart';
 import '../../features/drawer/presentation/view/widgets/address_item.dart';
 import '../../features/drawer/presentation/view/widgets/details_of_payment.dart';
+import '../../translations/locale_keys.g.dart';
 import '../utils/constants.dart';
 import '../widgets/custom_button.dart';
 
@@ -20,9 +22,9 @@ Future descriptionViewMore(BuildContext context) {
           padding: const EdgeInsets.all(10),
           child: Column(
             children: [
-              const Text(
-                'Description',
-                style: TextStyle(
+              Text(
+                LocaleKeys.description.tr(),
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
@@ -65,17 +67,18 @@ Future<dynamic> buildShowModalBottomSheetOfProductDetail(BuildContext context,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
-                        'Saved Address',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      Text(
+                        LocaleKeys.savedAddress.tr(),
+                        style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
                       InkWell(
                           onTap: () => isDetails
                               ? Navigator.pop(context)
-                              : MagicRouter.navigateAndPopAll(AddAddressView()),
-                          child: const Text(
-                            'Add New Address',
-                            style: TextStyle(
+                              : MagicRouter.navigateAndPopUntilFirstPage(
+                                  AddAddressView()),
+                          child: Text(
+                            LocaleKeys.addNewAddress.tr(),
+                            style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: kPrimaryColor),
                           )),
@@ -108,7 +111,7 @@ Future<dynamic> buildShowModalBottomSheetOfProductDetail(BuildContext context,
                 CustomButton(
                   onPressed: () =>
                       MagicRouter.navigateTo(const DetailsOfPayment()),
-                  text: 'Confirm Address',
+                  text: LocaleKeys.confirmAddress.tr(),
                   textColor: Colors.white,
                   backgroundColor: kPrimaryColor,
                   borderRadius: BorderRadius.circular(24.r),

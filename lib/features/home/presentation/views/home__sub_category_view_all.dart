@@ -1,9 +1,10 @@
-
 import 'package:e_commerce/features/drawer/presentation/view/widgets/drawer_list_tile_app_bar.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/home_category_item_details_view_body.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../translations/locale_keys.g.dart';
 
 class HomeSubCategoryViewAll extends StatelessWidget {
   const HomeSubCategoryViewAll({Key? key}) : super(key: key);
@@ -11,25 +12,28 @@ class HomeSubCategoryViewAll extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: drawerListTileAppBar(title: 'Sub Category'),
+      appBar: drawerListTileAppBar(title: LocaleKeys.subCategory.tr()),
       body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 20.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           children: [
-             SizedBox(height: 20.h,),
             SizedBox(
-              height: MediaQuery.of(context).size.height*.8,
+              height: 20.h,
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * .8,
               child: GridView.builder(
                 // scrollDirection:Axis.horizontal ,
                 physics: const BouncingScrollPhysics(),
                 itemCount: 15,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
-                  childAspectRatio: 2.2/ 1.2,
+                  childAspectRatio: 2.2 / 1.2,
                   crossAxisSpacing: 1,
-                  mainAxisSpacing:1,
+                  mainAxisSpacing: 1,
                 ),
-                itemBuilder: (context, index) => const HomeCategorySubCategoryItem(),
+                itemBuilder: (context, index) =>
+                    const HomeCategorySubCategoryItem(),
               ),
             ),
           ],

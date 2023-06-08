@@ -13,4 +13,3 @@ Country selectedCountry = Country(
     displayName: 'Egypt',
     displayNameNoCountryCode: 'EG',
     e164Key: '');
-  

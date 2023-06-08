@@ -1,9 +1,12 @@
+import 'dart:developer';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:e_commerce/features/auth/presentation/views/forget_password_view.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import '../../../../../core/utils/cache_helper.dart';
 import '../../../../../core/utils/constants.dart';
 import '../../../../../core/utils/assets.dart';
@@ -172,8 +175,14 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                         image: AppAssets.facebook,
                         imgColor: Colors.blue.shade800,
                       ),
-                      const SocialButton(
-                          image: AppAssets.gmail, imgColor: Colors.red),
+                      SocialButton(
+                          onTap: () async {
+                            log('GMAIL');
+                            // await signInWithGoogle();
+                            log('GMAIL');
+                          },
+                          image: AppAssets.gmail,
+                          imgColor: Colors.red),
                     ],
                   ),
                   SizedBox(height: 20.h),
@@ -245,5 +254,22 @@ class _LoginViewBodyState extends State<LoginViewBody> {
         ),
       ),
     );
+  }
+
+  Future<UserCredential> signInWithGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
+    log(' ${googleUser!.email}');
+    log(' ${googleUser.displayName}');
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+    // Once signed in, return the UserCredential
+    return await FirebaseAuth.instance.signInWithCredential(credential);
   }
 }

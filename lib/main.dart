@@ -4,6 +4,7 @@ import 'package:e_commerce/core/utils/constants.dart';
 import 'package:e_commerce/features/drawer/presentation/view_model/app_bar_drawar_cubit/app_bar_drawer_cubit.dart';
 import 'package:e_commerce/translations/codegen_loader.g.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,10 +14,14 @@ import 'core/utils/internet_connection_error.dart';
 import 'core/utils/magic_router.dart';
 import 'core/utils/network_info.dart';
 import 'features/splash/presentations/views/splash_view.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(EasyLocalization(
       supportedLocales: const [Locale('en'), Locale('ar')],
       assetLoader: const CodegenLoader(),

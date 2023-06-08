@@ -20,7 +20,6 @@ class ForgetPasswordViewBody extends StatefulWidget {
 
 class _ForgetPasswordViewBodyState extends State<ForgetPasswordViewBody> {
   final TextEditingController phoneController = TextEditingController();
-
   final GlobalKey<FormState> formKey = GlobalKey();
 
   @override

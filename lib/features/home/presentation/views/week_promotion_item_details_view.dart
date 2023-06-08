@@ -1,8 +1,10 @@
 import 'package:e_commerce/features/drawer/presentation/view/widgets/drawer_list_tile_app_bar.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/widgets/custom_text_form.dart';
 import '../../../../core/widgets/product_item.dart';
+import '../../../../translations/locale_keys.g.dart';
 
 class WeekPromotionItemDetailsView extends StatelessWidget {
   const WeekPromotionItemDetailsView({Key? key}) : super(key: key);
@@ -10,39 +12,46 @@ class WeekPromotionItemDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: drawerListTileAppBar(title: 'Week Promotion'),
-      body: WeekPromotionItemDetailsViewBody() ,
+      appBar: drawerListTileAppBar(
+        title: LocaleKeys.weekPromotion.tr(),
+      ),
+      body: WeekPromotionItemDetailsViewBody(),
     );
   }
 }
+
 class WeekPromotionItemDetailsViewBody extends StatelessWidget {
-   WeekPromotionItemDetailsViewBody({Key? key}) : super(key: key);
+  WeekPromotionItemDetailsViewBody({Key? key}) : super(key: key);
   final TextEditingController searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 20.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: Column(
-        children:  [
-          SizedBox(height: 20.h,),
+        children: [
+          SizedBox(
+            height: 20.h,
+          ),
           CustomTextFormField(
             // isBorder: false,
-            isPrefix:false ,
+            isPrefix: false,
             suffix: Icons.search_outlined,
             controller: searchController,
-            hintText: 'Search Product Name',
+            hintText: LocaleKeys.searchProductName.tr(),
             prefix: Icons.lock_outline_rounded,
             // suffixPressed: (){},
             // onSubmitted: (value){},
             inputType: TextInputType.visiblePassword,
             validator: (data) {
               if (data!.isEmpty) {
-                return ' enter what would you want to search about ';
+                return LocaleKeys.enterwhatwouldyouwanttosearchabout.tr();
               }
               return null;
             },
           ),
-            SizedBox(height: 20.h,),
+          SizedBox(
+            height: 20.h,
+          ),
           Expanded(
             child: GridView.builder(
               shrinkWrap: true,
@@ -54,7 +63,9 @@ class WeekPromotionItemDetailsViewBody extends StatelessWidget {
                 crossAxisSpacing: 1.0,
                 mainAxisSpacing: 1.0,
               ),
-              itemBuilder: (context, index) => const ProductItem(isdecs: true,),
+              itemBuilder: (context, index) => const ProductItem(
+                isdecs: true,
+              ),
             ),
           ),
         ],

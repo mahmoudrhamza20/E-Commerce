@@ -79,7 +79,7 @@ class CartViewBody extends StatelessWidget {
         ),
         const Spacer(),
         Container(
-          height: 60.h,
+          height: 50.h,
           width: double.infinity,
           decoration: const BoxDecoration(
               color: Colors.white,
@@ -151,12 +151,9 @@ class CartViewBody extends StatelessWidget {
                           fontSize: 20.sp, fontWeight: FontWeight.bold),
                     ),
                     IncDecButton(
-                      widget: const Padding(
-                        padding: EdgeInsets.only(bottom: 10),
-                        child: Icon(
-                          Icons.minimize,
-                          color: Colors.white,
-                        ),
+                      widget: const Icon(
+                        Icons.horizontal_rule,
+                        color: Colors.white,
                       ),
                       onTap: () {
                         CounterCubit.get(context).min();

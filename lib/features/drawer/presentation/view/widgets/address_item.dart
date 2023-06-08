@@ -1,7 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/utils/constants.dart';
 import '../../../../../core/utils/magic_router.dart';
 import '../../../../../core/utils/app_text_style.dart';
+import '../../../../../translations/locale_keys.g.dart';
 import '../add_address_view.dart';
 
 class AddressItem extends StatelessWidget {
@@ -37,7 +39,7 @@ class AddressItem extends StatelessWidget {
                   color: selectedIndex ? Colors.green : Colors.black,
                 ),
                 Text(
-                  'Home Address',
+                  LocaleKeys.homeAddress.tr(),
                   style: AppTextStyle.textStyle14.copyWith(
                     overflow: TextOverflow.ellipsis,
                     color: selectedIndex ? Colors.green : Colors.black,

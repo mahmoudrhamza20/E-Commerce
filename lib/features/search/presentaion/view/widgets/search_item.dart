@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class SearchItem extends StatelessWidget {
@@ -12,7 +11,10 @@ class SearchItem extends StatelessWidget {
       contentPadding: EdgeInsets.zero,
       leading: Icon(Icons.watch_later_outlined),
       title: Text('Action Camera'),
-      trailing:Icon(Icons.close,color: Colors.black,),
+      trailing: Icon(
+        Icons.close,
+        color: Colors.black,
+      ),
     );
   }
 }

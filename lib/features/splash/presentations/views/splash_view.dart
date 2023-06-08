@@ -14,8 +14,6 @@ import '../../../../core/utils/magic_router.dart';
 import '../../../../translations/locale_keys.g.dart';
 import '../../../main_screen/presentation/views/main_view.dart';
 
-
-
 class SplashView extends StatelessWidget {
   const SplashView({super.key});
 
@@ -26,8 +24,6 @@ class SplashView extends StatelessWidget {
     );
   }
 }
-
-
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({Key? key}) : super(key: key);
@@ -69,7 +65,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
             print('Animate completed');
           }
         }
-       
       });
 
     CurvedAnimation curvedAnimation =
@@ -102,19 +97,14 @@ class _SplashViewBodyState extends State<SplashViewBody>
     _textSizeTween = HWAnimationConfig.textSizeTweenSequence
         .animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
     _controller.forward();
-Timer(const Duration(seconds: 5),(){
-  if (CacheHelper.getData(key: 'login') == true) {
-      MagicRouter.navigateAndPopAll(const MainScreen());
-    } else {
-      MagicRouter.navigateAndPopAll(const OnBoardingView());
-    }
-}
- );
-  
-
+    Timer(const Duration(seconds: 5), () {
+      if (CacheHelper.getData(key: 'login') == true) {
+        MagicRouter.navigateAndPopAll(const MainScreen());
+      } else {
+        MagicRouter.navigateAndPopAll(const OnBoardingView());
+      }
+    });
   }
-
-   
 
   @override
   Widget build(BuildContext context) {
@@ -178,7 +168,7 @@ Timer(const Duration(seconds: 5),(){
                   ),
                 ),
                 Text(
-                 LocaleKeys.welcome.tr(),
+                  LocaleKeys.welcome.tr(),
                   style: TextStyle(
                     fontSize: _textSizeTween.value,
                     color: Colors.white,

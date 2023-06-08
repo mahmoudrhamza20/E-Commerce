@@ -1,11 +1,13 @@
 import 'package:e_commerce/core/utils/constants.dart';
 import 'package:e_commerce/core/utils/magic_router.dart';
 import 'package:e_commerce/features/drawer/presentation/view/widgets/drawer_list_tile_app_bar.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/custom_text_form.dart';
+import '../../../../translations/locale_keys.g.dart';
 
 class AddAddressView extends StatelessWidget {
   AddAddressView({Key? key}) : super(key: key);
@@ -20,7 +22,9 @@ class AddAddressView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: drawerListTileAppBar(title: 'Add Address'),
+      appBar: drawerListTileAppBar(
+        title: LocaleKeys.addAddress.tr(),
+      ),
       body: AddAddressViewBody(
           formKey: formKey,
           countryController: countryController,
@@ -70,49 +74,52 @@ class AddAddressViewBody extends StatelessWidget {
                     height: 22.h,
                   ),
                   SectionOfAddAddress(
-                      text: 'Full Name',
+                      text: LocaleKeys.fullName.tr(),
                       controller: nameController,
                       hint: 'John Doe'),
                   SizedBox(
                     height: 10.h,
                   ),
                   SectionOfAddAddress(
-                      text: 'Address',
+                      text: LocaleKeys.address.tr(),
                       controller: addressController,
                       hint: '78th Main Road, 1000fh Road....'),
                   SizedBox(
                     height: 10.h,
                   ),
                   SectionOfAddAddress(
-                      text: 'Zip Code',
+                      text: LocaleKeys.zipCode.tr(),
                       controller: zipController,
                       hint: '395006'),
                   SizedBox(
                     height: 10.h,
                   ),
                   SectionOfAddAddress(
-                      text: 'Country',
-                      controller: countryController,
-                      hint: 'Select Country'),
+                    text: LocaleKeys.country.tr(),
+                    controller: countryController,
+                    hint: LocaleKeys.selectCountry.tr(),
+                  ),
                   SizedBox(
                     height: 10.h,
                   ),
                   SectionOfAddAddress(
-                      text: 'city',
-                      controller: ciryController,
-                      hint: 'Select City'),
+                    text: LocaleKeys.city.tr(),
+                    controller: ciryController,
+                    hint: LocaleKeys.selectCity.tr(),
+                  ),
                   SizedBox(
                     height: 10.h,
                   ),
                   SectionOfAddAddress(
-                      text: 'District',
-                      controller: districtController,
-                      hint: 'Select District'),
+                    text: LocaleKeys.district.tr(),
+                    controller: districtController,
+                    hint: LocaleKeys.selectDistrict.tr(),
+                  ),
                   SizedBox(
                     height: 10.h,
                   ),
                   CustomButton(
-                      text: 'Save Address',
+                      text: LocaleKeys.save.tr(),
                       textColor: Colors.white,
                       backgroundColor: kPrimaryColor,
                       borderRadius: BorderRadius.circular(24),
@@ -166,7 +173,7 @@ class SectionOfAddAddress extends StatelessWidget {
           inputType: TextInputType.name,
           validator: (data) {
             if (data!.isEmpty) {
-              return '$text can\'t be empty';
+              return '$text ${LocaleKeys.cantbeempty.tr()}';
             }
             return null;
           },

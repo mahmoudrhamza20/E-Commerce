@@ -1,10 +1,12 @@
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/core/widgets/product_item.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/constants.dart';
 import '../../../../core/utils/magic_router.dart';
 import '../../../../core/widgets/bottom_sheets.dart';
+import '../../../../translations/locale_keys.g.dart';
 import '../../../cart/presentaion/view/cart_view.dart';
 
 class FlashSaleProductItemDetails extends StatelessWidget {
@@ -53,7 +55,7 @@ class FlashSaleProductItemDetailsBody extends StatelessWidget {
             title: Row(
               children: [
                 Text(
-                  '      Product Details',
+                  '     ${LocaleKeys.productDetail.tr()}',
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 20.sp,
@@ -131,7 +133,7 @@ class FlashSaleProductItemDetailsBody extends StatelessWidget {
                           width: 5,
                         ),
                         Text(
-                          'Available',
+                          LocaleKeys.available.tr(),
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 16.sp,
@@ -201,7 +203,7 @@ class FlashSaleProductItemDetailsBody extends StatelessWidget {
                         color: Colors.black54,
                       ),
                       Text(
-                        'Detail Product',
+                        LocaleKeys.detailsProduct.tr(),
                         style: TextStyle(
                             fontSize: 16.sp,
                             fontWeight: FontWeight.bold,
@@ -218,7 +220,7 @@ class FlashSaleProductItemDetailsBody extends StatelessWidget {
                         height: 10.h,
                       ),
                       Text(
-                        'Description',
+                        LocaleKeys.description.tr(),
                         style: TextStyle(
                             fontSize: 16.sp,
                             fontWeight: FontWeight.bold,
@@ -244,7 +246,7 @@ class FlashSaleProductItemDetailsBody extends StatelessWidget {
                           },
                           child: Center(
                               child: Text(
-                            'View More ',
+                            LocaleKeys.viewMore.tr(),
                             style: TextStyle(
                                 fontSize: 16.sp,
                                 fontWeight: FontWeight.bold,
@@ -256,14 +258,14 @@ class FlashSaleProductItemDetailsBody extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('Top Rated Products',
+                          Text(LocaleKeys.topRatedProducts.tr(),
                               style: TextStyle(
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.bold,
                                   overflow: TextOverflow.ellipsis)),
-                          const Text(
-                            'View all >>',
-                            style: TextStyle(color: kPrimaryColor),
+                          Text(
+                            LocaleKeys.viewAll.tr(),
+                            style: const TextStyle(color: kPrimaryColor),
                           ),
                         ],
                       ),
@@ -302,7 +304,7 @@ class FlashSaleProductItemDetailsBody extends StatelessWidget {
                           SizedBox(
                             width: MediaQuery.of(context).size.width * .72,
                             child: CustomButton(
-                              text: 'Pay',
+                              text: LocaleKeys.pay.tr(),
                               textColor: Colors.white,
                               backgroundColor: kPrimaryColor,
                               borderRadius: BorderRadius.circular(16),

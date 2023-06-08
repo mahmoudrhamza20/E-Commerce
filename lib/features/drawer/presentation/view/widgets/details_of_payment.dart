@@ -78,7 +78,7 @@ class DetailsOfPaymentBody extends StatelessWidget {
           ),
           Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height * .23,
+            height: MediaQuery.of(context).size.height * .257,
             decoration: BoxDecoration(
                 color: Colors.grey.shade200,
                 borderRadius: BorderRadius.circular(8)),
